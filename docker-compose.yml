@@ -44,3 +44,5 @@ services:
       - postgres
     command: start-dev
     restart: unless-stopped
+    volumes:
+    - ./keycloak-theme/carRentalTheme:/opt/keycloak/themes/carRentalTheme
