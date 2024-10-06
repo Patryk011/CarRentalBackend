@@ -51,6 +51,6 @@ public class SecurityConfig {
                         .deleteCookies("JSESSIONID")
                 );
 
-        return http.build(); // Use `.build()` instead of `.getOrBuild()`
+        return http.build();
     }
 }
