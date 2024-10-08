@@ -8,6 +8,7 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/carrental
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=qwerty123
+      - SPRING_DATASOURCE_SCHEMA=carrental
     depends_on:
       - postgres
 
@@ -22,9 +23,8 @@ services:
       POSTGRES_DB: carrental
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: qwerty123
-      POSTGRES_MULTIPLE_DATABASES: carrental,keycloak
     ports:
-      - "5432:5432"
+      - "5433:5432"
 
 
   keycloak:
@@ -34,8 +34,9 @@ services:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
       KC_DB: postgres
+      KC_DB_SCHEMA: keycloak
       KC_DB_URL_HOST: postgres
-      KC_DB_URL_PORT: 5432
+      KC_DB_URL: jdbc:postgresql://postgres:5432/carrental
       KC_DB_USERNAME: postgres
       KC_DB_PASSWORD: qwerty123
     ports:
