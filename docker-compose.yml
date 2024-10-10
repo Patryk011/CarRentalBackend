@@ -11,6 +11,8 @@ services:
       - SPRING_DATASOURCE_SCHEMA=carrental
     depends_on:
       - postgres
+      - keycloak
+
 
 
   postgres:
@@ -47,3 +49,5 @@ services:
     restart: unless-stopped
     volumes:
     - ./keycloak-theme/carRentalTheme:/opt/keycloak/themes/carRentalTheme
+
+
