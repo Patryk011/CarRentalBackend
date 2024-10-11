@@ -21,7 +21,7 @@ spring:
     oauth2:
         resourceserver:
           jwt:
-            issuer-uri: http://localhost:8081/realms/car-rental
+            issuer-uri: http://keycloak:8080/realms/car-rental
             jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
 
 server:
