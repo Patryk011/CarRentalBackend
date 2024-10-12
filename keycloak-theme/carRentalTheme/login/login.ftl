@@ -17,7 +17,12 @@
             <label for="password">Hasło</label>
             <input type="password" id="password" name="password" placeholder="Wprowadź hasło" required />
             <div class="actions">
-            <a href="#">Zapomniałeś hasła?</a>
+                <label for="rememberMe" class="rememberMe">
+                    <input type="checkbox" id="rememberMe" name="rememberMe" />
+                    Zapamiętaj mnie
+                </label>
+
+<#--            <a href="${url.loginResetCredentialsUrl}>Zapomniałeś hasła?</a>-->
             </div>
             <button type="submit" class="login-btn">Zaloguj się</button>
         </form>
