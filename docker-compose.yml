@@ -11,7 +11,7 @@ services:
       - SPRING_DATASOURCE_SCHEMA=carrental
     depends_on:
       - postgres
-      - keycloak
+      - keycloak-local.pl
 
 
 
@@ -29,7 +29,7 @@ services:
       - "5433:5432"
 
 
-  keycloak:
+  keycloak-local.pl:
     image: quay.io/keycloak/keycloak:latest
     container_name: keycloak
     environment:
@@ -41,7 +41,7 @@ services:
       KC_DB_URL: jdbc:postgresql://postgres:5432/carrental
       KC_DB_USERNAME: postgres
       KC_DB_PASSWORD: qwerty123
-      KC_HOSTNAME: http://keycloak:8080/
+      KC_HOSTNAME: http://keycloak-local.pl:8080/
       KC_HOSTNAME_BACKCHANNEL_DYNAMIC: "true"
     ports:
       - "8080:8080"
