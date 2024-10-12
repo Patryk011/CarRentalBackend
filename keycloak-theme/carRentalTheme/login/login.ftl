@@ -13,14 +13,18 @@
         <h1>Wypożyczalnia samochodów</h1>
         <form action="${url.loginAction}" method="POST">
             <label for="username">Email</label>
-            <input type="text" id="username" name="username" placeholder="Enter your username" required />
+            <input type="text" id="username" name="username" placeholder="Wprowadź email" required />
             <label for="password">Hasło</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required />
+            <input type="password" id="password" name="password" placeholder="Wprowadź hasło" required />
+            <div class="actions">
+            <a href="#">Zapomniałeś hasła?</a>
+            </div>
             <button type="submit" class="login-btn">Zaloguj się</button>
         </form>
     </div>
     <div class="login-footer">
-        <a href="#">Zapomniałeś hasła?</a>
+
+        <a href="${url.registrationUrl}">Nie masz konta? Zarejestruj się</a>
     </div>
 </div>
 </div>
