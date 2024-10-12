@@ -31,6 +31,12 @@
 
         <a href="${url.registrationUrl}">Nie masz konta? Zarejestruj się</a>
     </div>
+
+    <div class="social-login">
+        <p>Lub</p>
+<#--        <a href="${url.resourcesPath}/realms/car-rental/protocol/openid-connect/auth?client_id=google" class="google-login-btn">Zaloguj się przez Google</a>-->
+        <a href="${url.resourcesPath}/realms/car-rental/protocol/openid-connect/auth?client_id=facebook" class="facebook-login-btn">Zaloguj się przez Facebook</a>
+    </div>
 </div>
 </div>
 </body>
