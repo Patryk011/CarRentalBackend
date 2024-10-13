@@ -93,7 +93,6 @@ a:hover {
 
 .social-login {
     text-align: center;
-    margin-top: 20px;
 }
 
 .social-login a {
@@ -107,7 +106,15 @@ a:hover {
 }
 
 .google-login-btn {
-    background-color: #DB4437;
+    background-color: #db4437;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 0;
+}
+.google-login-btn:hover {
+    background-color: #c33d2e;
 }
 
 .facebook-login-btn {

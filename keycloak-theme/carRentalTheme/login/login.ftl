@@ -34,8 +34,13 @@
 
     <div class="social-login">
         <p>Lub</p>
-        <a href="${url.resourcesPath}/realms/car-rental/protocol/openid-connect/auth?client_id=google" class="google-login-btn">Zaloguj się przez Google</a>
-<#--        <a href="${url.resourcesPath}/realms/car-rental/protocol/openid-connect/auth?client_id=facebook" class="facebook-login-btn">Zaloguj się przez Facebook</a>-->
+        <#if social.providers?? && social.providers?size gt 0>
+            <#list social.providers as provider>
+                <a href="${provider.loginUrl}" class="${provider.alias}-login-btn">
+                    Zaloguj się przez ${provider.displayName}
+                </a>
+            </#list>
+        </#if>
     </div>
 </div>
 </div>
