@@ -7,7 +7,7 @@ services:
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://pg-148b2256-car-rental.b.aivencloud.com:16926/defaultdb?sslmode=require
       - SPRING_DATASOURCE_USERNAME=avnadmin
-      - SPRING_DATASOURCE_PASSWORD=AVNS_3j3lgGIhbwQYamVHfnf
+      - SPRING_DATASOURCE_PASSWORD=${DATABASE_PASSWORD}
       - SPRING_DATASOURCE_SCHEMA=carrental
     depends_on:
       - keycloak
