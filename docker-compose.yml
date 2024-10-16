@@ -5,51 +5,28 @@ services:
     ports:
       - "8081:8081"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/carrental
-      - SPRING_DATASOURCE_USERNAME=postgres
-      - SPRING_DATASOURCE_PASSWORD=qwerty123
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://pg-148b2256-car-rental.b.aivencloud.com:16926/defaultdb?sslmode=require
+      - SPRING_DATASOURCE_USERNAME=avnadmin
+      - SPRING_DATASOURCE_PASSWORD=AVNS_3j3lgGIhbwQYamVHfnf
       - SPRING_DATASOURCE_SCHEMA=carrental
     depends_on:
-      - postgres
-      - keycloak-local.pl
+      - keycloak
 
-
-
-  postgres:
-    image: postgres:latest
-    container_name: carrental_postgres
-    restart: always
-    volumes:
-      - ./pgdata:/var/lib/postgresql/data
-    environment:
-      POSTGRES_DB: carrental
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: qwerty123
-    ports:
-      - "5433:5432"
-
-
-  keycloak-local.pl:
+  keycloak:
     image: quay.io/keycloak/keycloak:latest
     container_name: keycloak
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
       KC_DB: postgres
-      KC_DB_SCHEMA: keycloak
-      KC_DB_URL_HOST: postgres
-      KC_DB_URL: jdbc:postgresql://postgres:5432/carrental
-      KC_DB_USERNAME: postgres
-      KC_DB_PASSWORD: qwerty123
+      KC_DB_URL: jdbc:postgresql://pg-148b2256-car-rental.b.aivencloud.com:16926/defaultdb?sslmode=require
+      KC_DB_USERNAME: avnadmin
+      KC_DB_PASSWORD: AVNS_3j3lgGIhbwQYamVHfnf
       KC_HOSTNAME: http://keycloak-local.pl:8080/
       KC_HOSTNAME_BACKCHANNEL_DYNAMIC: "true"
     ports:
       - "8080:8080"
-    depends_on:
-      - postgres
     command: start-dev
     restart: unless-stopped
     volumes:
-    - ./keycloak-theme/carRentalTheme:/opt/keycloak/themes/carRentalTheme
-
-
+      - ./keycloak-theme/carRentalTheme:/opt/keycloak/themes/carRentalTheme
