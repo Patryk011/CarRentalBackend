@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: CarRental
+
+  datasource:
+    url: jdbc:postgresql://postgres:5432/carrental
+    username: postgres
+    password: qwerty123
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      show-sql: true
+      ddl-auto: update
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        default_schema: carrental
+
+  security:
+    oauth2:
+        resourceserver:
+          jwt:
+            issuer-uri: http://keycloak-local.pl:8080/realms/car-rental
+            jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+
+server:
+  port: 8081
+
+
+logging:
+  level:
+    org.springframework.security: DEBUG
