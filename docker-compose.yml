@@ -21,7 +21,7 @@ services:
       KC_DB: postgres
       KC_DB_URL: jdbc:postgresql://pg-148b2256-car-rental.b.aivencloud.com:16926/defaultdb?sslmode=require
       KC_DB_USERNAME: avnadmin
-      KC_DB_PASSWORD: AVNS_3j3lgGIhbwQYamVHfnf
+      KC_DB_PASSWORD: ${DATABASE_PASSWORD}
       KC_HOSTNAME: http://keycloak-local.pl:8080/
       KC_HOSTNAME_BACKCHANNEL_DYNAMIC: "true"
     ports:
