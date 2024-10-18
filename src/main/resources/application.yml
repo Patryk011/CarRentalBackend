@@ -3,9 +3,9 @@ spring:
     name: CarRental
 
   datasource:
-    url: jdbc:postgresql://postgres:5432/carrental
-    username: postgres
-    password: qwerty123
+    url: jdbc:postgresql://pg-148b2256-car-rental.b.aivencloud.com:16926/defaultdb?sslmode=require
+    username: avnadmin
+    password: ${DATABASE_PASSWORD}
 
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
