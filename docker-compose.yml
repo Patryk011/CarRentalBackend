@@ -10,9 +10,9 @@ services:
       - SPRING_DATASOURCE_PASSWORD=${DATABASE_PASSWORD}
       - SPRING_DATASOURCE_SCHEMA=carrental
     depends_on:
-      - keycloak
+      - keycloak-local.pl
 
-  keycloak:
+  keycloak-local.pl:
     image: quay.io/keycloak/keycloak:latest
     container_name: keycloak
     environment:
