@@ -33,11 +33,19 @@
     </div>
 
     <div class="social-login">
-        <p>Lub zaloguj się za pomocą</p>
         <#if social.providers?? && social.providers?size gt 0>
+            <p>Lub zaloguj się za pomocą</p>
             <#list social.providers as provider>
+
                 <a href="${provider.loginUrl}" class="${provider.alias}-login-btn">
-                    <img src="${url.resourcesPath}/img/white-google.png" alt="g-google" />
+
+                    <#assign providerImages = {
+                    "google": "white-google.png",
+                    "facebook": "facebook.png"
+                    } />
+
+                    <img src="${url.resourcesPath}/img/${providerImages[provider.alias]}" alt="${provider.alias}" />
+
                     <span class="social-provider-name">${provider.displayName}</span>
                 </a>
             </#list>
