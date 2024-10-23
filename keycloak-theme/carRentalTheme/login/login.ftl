@@ -10,7 +10,7 @@
         <img src="${url.resourcesPath}/img/logo.png" alt="Car Rental Logo" />
     </div>
     <div class="login-form">
-        <h1>Wypożyczalnia samochodów</h1>
+
         <form action="${url.loginAction}" method="POST">
             <label for="username">Email</label>
             <input type="text" id="username" name="username" placeholder="Wprowadź email" required />
@@ -34,13 +34,13 @@
 
     <div class="social-login">
         <#if social.providers?? && social.providers?size gt 0>
-            <p>Lub zaloguj się za pomocą</p>
+            <p>Lub zaloguj się używając kont społecznościowych</p>
             <#list social.providers as provider>
 
                 <a href="${provider.loginUrl}" class="${provider.alias}-login-btn">
 
                     <#assign providerImages = {
-                    "google": "white-google.png",
+                    "google": "g-google.png",
                     "facebook": "facebook.png"
                     } />
 
