@@ -10,7 +10,7 @@
             <img src="${url.resourcesPath}/img/logo.png" alt="Car Rental Logo" />
         </div>
         <div class="register-form">
-            <h1>Rejestracja użytkownika</h1>
+            <h1>Rejestracja</h1>
             <form action="${url.registrationAction}" method="POST">
                 <label for="firstName">Imię</label>
                 <input type="text" id="firstName" name="firstName" placeholder="Wpisz swoje imię" required />
