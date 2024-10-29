@@ -27,10 +27,12 @@
             <button type="submit" class="login-btn">Zaloguj się</button>
         </form>
     </div>
+    <#if client.clientId == "car-rental-client">
     <div class="login-footer">
 
         <a href="${url.registrationUrl}">Nie masz konta? Zarejestruj się</a>
     </div>
+    </#if>
 
     <div class="social-login">
         <#if social.providers?? && social.providers?size gt 0>
