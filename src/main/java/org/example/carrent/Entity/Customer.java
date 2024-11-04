@@ -2,12 +2,10 @@ package org.example.carrent.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-
-
 import java.util.Date;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "customers")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -39,7 +37,4 @@ public class Customer {
 
     @Column(name = "address")
     private String address;
-
-
-
 }
