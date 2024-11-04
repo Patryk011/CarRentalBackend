@@ -7,7 +7,7 @@ import lombok.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "customers")
+@Table(name = "customer")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -30,11 +30,9 @@ public class Customer {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name = "date_of_birth")
+    @Column(name = "birth_Date")
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
-
-
 
     @Column(name = "license_number", unique = true)
     private String licenseNumber;
