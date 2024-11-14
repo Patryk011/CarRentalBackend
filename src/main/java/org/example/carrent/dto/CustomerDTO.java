@@ -14,7 +14,7 @@ public class CustomerDTO {
     private String lastName;
     private String email;
     private String phoneNumber;
-    private Date dateOfBirth;
+    private Date birthDate;
     private String licenseNumber;
     private String address;
 }
