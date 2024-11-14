@@ -1,4 +1,4 @@
-package org.example.carrent.Entity;
+package org.example.carrent.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -28,9 +28,9 @@ public class Customer {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name = "birth_Date")
+    @Column(name = "birth_date")
     @Temporal(TemporalType.DATE)
-    private Date dateOfBirth;
+    private Date birthDate;
 
     @Column(name = "license_number", unique = true)
     private String licenseNumber;
