@@ -5,6 +5,7 @@ import org.example.carrent.dto.CustomerDTO;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class CustomerMapper {
@@ -20,6 +21,11 @@ public class CustomerMapper {
         dto.setLicenseNumber(String.valueOf(customer.getLicenseNumber()));
         dto.setAddress(customer.getAddress());
         return dto;
+    }
+
+    public static List<CustomerDTO> toDto(List<Customer> customers) {
+        return customers.stream().map(CustomerMapper::toDto)
+                .collect(Collectors.toList());
     }
 
     public static Customer toEntity(CustomerDTO dto) {

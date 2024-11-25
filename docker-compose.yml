@@ -6,7 +6,7 @@ services:
       - "8081:8081"
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://pg-148b2256-car-rental.b.aivencloud.com:16926/defaultdb?sslmode=require
-      - SPRING_DATASOURCE_USERNAME=ola
+      - SPRING_DATASOURCE_USERNAME=avnadmin
       - SPRING_DATASOURCE_PASSWORD=${DATABASE_PASSWORD}
       - SPRING_DATASOURCE_SCHEMA=carrental
     depends_on:
@@ -20,7 +20,7 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: admin
       KC_DB: postgres
       KC_DB_URL: jdbc:postgresql://pg-148b2256-car-rental.b.aivencloud.com:16926/defaultdb?sslmode=require
-      KC_DB_USERNAME: ola
+      KC_DB_USERNAME: avnadmin
       KC_DB_PASSWORD: ${DATABASE_PASSWORD}
       KC_HOSTNAME: https://keycloak-local.pl:8443
       KC_HOSTNAME_PORT: 8443
