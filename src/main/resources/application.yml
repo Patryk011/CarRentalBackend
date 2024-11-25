@@ -4,7 +4,7 @@ spring:
 
   datasource:
     url: jdbc:postgresql://pg-148b2256-car-rental.b.aivencloud.com:16926/defaultdb?sslmode=require
-    username: ola
+    username: avnadmin
     password: ${DATABASE_PASSWORD}
     hikari:
       maximum-pool-size: 5

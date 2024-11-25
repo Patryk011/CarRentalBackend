@@ -5,6 +5,7 @@ import org.example.carrent.mapper.CustomerMapper;
 import org.example.carrent.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,8 +18,6 @@ public class CustomerServiceImpl implements CustomerService {
         this.customerRepository = customerRepository;
         this.customerMapper = customerMapper;
     }
-
-
 
     @Override
     public List<CustomerDTO> getAllCustomers() {
