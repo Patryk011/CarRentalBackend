@@ -3,9 +3,7 @@ package org.example.carrent.Controllers;
 import org.example.carrent.dto.CustomerDTO;
 import org.example.carrent.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,6 +20,11 @@ public class CustomerController {
     @GetMapping("/all")
     public List<CustomerDTO> getAllCustomers() {
         return customerService.getAllCustomers();
+    }
+
+    @PostMapping
+    public CustomerDTO addCustomer(@RequestBody CustomerDTO customerDTO) {
+        return customerService.addCustomer(customerDTO);
     }
 
 }

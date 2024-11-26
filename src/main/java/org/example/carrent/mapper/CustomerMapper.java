@@ -20,6 +20,7 @@ public class CustomerMapper {
         dto.setBirthDate(customer.getBirthDate());
         dto.setLicenseNumber(String.valueOf(customer.getLicenseNumber()));
         dto.setAddress(customer.getAddress());
+        dto.setRegistrationDate(customer.getRegistrationDate());
         return dto;
     }
 
@@ -38,6 +39,7 @@ public class CustomerMapper {
         entity.setBirthDate(dto.getBirthDate());
         entity.setLicenseNumber(dto.getLicenseNumber());
         entity.setAddress(dto.getAddress());
+        entity.setRegistrationDate(dto.getRegistrationDate());
         return entity;
     }
 }
