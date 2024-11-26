@@ -37,4 +37,7 @@ public class Customer {
 
     @Column(name = "address")
     private String address;
+
+    @Column(name = "registration_date")
+    private Long registrationDate;
 }
