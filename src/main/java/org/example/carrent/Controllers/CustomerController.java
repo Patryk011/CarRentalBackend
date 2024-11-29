@@ -27,4 +27,14 @@ public class CustomerController {
         return customerService.addCustomer(customerDTO);
     }
 
+    @GetMapping("/{id}")
+    public CustomerDTO getCustomerById(@PathVariable Long id) {
+        return customerService.findByID(id);
+    }
+
+    @PostMapping("/{id}")
+    public CustomerDTO updateCustomer(@PathVariable Long id, @RequestBody CustomerDTO customerDTO) {
+        return customerService.updateCustomer(id, customerDTO);
+    }
+
 }
