@@ -6,25 +6,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
+@Table(name = "car_model")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class CarModel {
 
-    @Entity
-    @Table(name = "car_model")
-    @Getter
-    @Setter
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public class CarModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+    @Column(name = "model", nullable = false)
+    private String model;
 
-        @Column(name = "model", nullable = false)
-        private String model;
-
-        @ManyToOne
-        @JoinColumn(name = "brand_id", nullable = false)
-        private CarBrand carBrand;
-    }
+    @ManyToOne
+    @JoinColumn(name = "brand_id", nullable = false)
+    private CarBrand carBrand;
 }
+
