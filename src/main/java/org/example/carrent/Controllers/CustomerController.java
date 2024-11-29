@@ -37,6 +37,11 @@ public class CustomerController {
         return customerService.updateCustomer(customerDTO);
     }
 
+    @GetMapping("/customers/email/{email}")
+    public CustomerDTO getCustomerByEmail(@PathVariable String email) {
+        return customerService.findByEmail(email);
+    }
+
     @DeleteMapping("/{id}")
     public void deleteCustomer(@PathVariable Long id) {
         customerService.deleteCustomer(id);
