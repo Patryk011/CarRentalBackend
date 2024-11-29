@@ -18,6 +18,6 @@ public class CarBrand {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "brand_name", nullable = false)
-    private String brandName;
+    @Column(name = "brand", nullable = false)
+    private String brand;
 }
