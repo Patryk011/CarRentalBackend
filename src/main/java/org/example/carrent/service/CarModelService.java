@@ -8,7 +8,7 @@ public interface CarModelService {
 
     CarModelDTO addCarModel(CarModelDTO carModelDTO);
 
-    CarModelDTO getCarModelById(Long id);
+    CarModelDTO findCarModelById(Long id);
 
     List<CarModelDTO> getAllCarModels();
 }

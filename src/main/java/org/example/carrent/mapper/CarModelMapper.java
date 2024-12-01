@@ -1,11 +1,15 @@
 package org.example.carrent.mapper;
 
+import org.example.carrent.dto.CarBrandDTO;
 import org.example.carrent.dto.CarModelDTO;
 import org.example.carrent.entity.CarBrand;
 import org.example.carrent.entity.CarModel;
 import org.example.carrent.exception.ResourceNotFoundException;
 import org.example.carrent.repository.CarBrandRepository;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class CarModelMapper {
@@ -32,5 +36,10 @@ public class CarModelMapper {
         entity.setCarBrand(carBrand);
 
         return entity;
+    }
+
+    public static List<CarModelDTO> toDto(List<CarModel> carModels) {
+        return carModels.stream().map(CarModelMapper::toDto)
+                .collect(Collectors.toList());
     }
 }
