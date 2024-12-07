@@ -22,7 +22,7 @@
                     Zapamiętaj mnie
                 </label>
 
-<#--            <a href="${url.loginResetCredentialsUrl}>Zapomniałeś hasła?</a>-->
+<#--            <a href="${url.loginResetCredentialsUrl}>Zapomniałeś hasła?</a>      this.isAdmin = keycloak.hasRealmRole("admin");-->
             </div>
             <button type="submit" class="login-btn">Zaloguj się</button>
         </form>
