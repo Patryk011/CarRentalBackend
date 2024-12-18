@@ -4,6 +4,9 @@ import org.example.carrent.dto.CarDTO;
 import org.example.carrent.entity.Car;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class CarMapper {
 
@@ -43,5 +46,10 @@ public class CarMapper {
         car.setNextServiceDate(dto.getNextServiceDate());
         car.setEngineCapacity(dto.getEngineCapacity());
         return car;
+    }
+
+    public static List<CarDTO> toDto(List<Car> cars){
+        return cars.stream().map(CarMapper::toDto)
+                .collect(Collectors.toList());
     }
 }
