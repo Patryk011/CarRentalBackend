@@ -31,5 +31,4 @@ public class CarDTO {
     private LocalDate lastServiceDate;
     private LocalDate nextServiceDate;
     private LocalDate engineCapacity;
-
 }
