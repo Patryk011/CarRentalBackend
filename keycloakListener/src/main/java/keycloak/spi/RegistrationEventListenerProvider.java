@@ -36,13 +36,13 @@ public class RegistrationEventListenerProvider implements EventListenerProvider 
             String firstName = user.getFirstName();
             String lastName = user.getLastName();
             String email = user.getEmail();
-//            String phoneNumber = user.getFirstAttribute("phone_number");
+            String phoneNumber = user.getFirstAttribute("phone_number");
 
             HashMap<String, Object> customerData = new HashMap<>();
             customerData.put("firstName", firstName);
             customerData.put("lastName", lastName);
             customerData.put("email", email);
-//            customerData.put("phoneNumber", phoneNumber);
+            customerData.put("phoneNumber", phoneNumber);
 
             try {
                 String requestBody = objectMapper.writeValueAsString(customerData);
