@@ -48,7 +48,8 @@ public class RegistrationEventListenerProvider implements EventListenerProvider 
             try {
                 String requestBody = objectMapper.writeValueAsString(customerData);
                 HttpRequest request = HttpRequest.newBuilder()
-                        .uri(URI.create("http://spring-backend:8081/customer-sync/register"))
+                        .uri(URI.create("http://spring-backend:8081/customer-sync/register")
+                        )
                         .header("Content-Type", "application/json")
                         .POST(HttpRequest.BodyPublishers.ofString(requestBody))
                         .build();
