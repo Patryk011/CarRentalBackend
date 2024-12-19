@@ -67,5 +67,5 @@ public class Car {
     private LocalDate nextServiceDate;
 
     @Column(name = "engine_capacity")
-    private LocalDate engineCapacity;
+    private Integer engineCapacity;
 }

@@ -31,5 +31,5 @@ public class CarDTO {
     private Integer seats;
     private LocalDate lastServiceDate;
     private LocalDate nextServiceDate;
-    private LocalDate engineCapacity;
+    private Integer engineCapacity;
 }
