@@ -23,7 +23,7 @@ public class CarDTO {
     private LocalDate purchaseDate;
     private CarState state;
     private String vin;
-    private LocalDate productionYear;
+    private Integer productionYear;
     private String color;
     private Integer pricePerHour;
     private CarTransmission transmission;

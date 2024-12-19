@@ -24,7 +24,7 @@ public class Car {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "car_model", nullable = false)
+    @JoinColumn(name = "model_id", nullable = false)
     private CarModel carModel;
 
     @Column(name = "registration_number", nullable = false,unique = true)
@@ -41,7 +41,7 @@ public class Car {
     private String vin;
 
     @Column(name = "production_year", nullable = false)
-    private LocalDate productionYear;
+    private Integer productionYear;
 
     @Column(name = "color", nullable = false)
     private String color;

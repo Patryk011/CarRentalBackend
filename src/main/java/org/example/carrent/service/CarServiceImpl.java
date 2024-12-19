@@ -6,9 +6,11 @@ import org.example.carrent.entity.Car;
 import org.example.carrent.exception.ResourceNotFoundException;
 import org.example.carrent.mapper.CarMapper;
 import org.example.carrent.repository.CarRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CarServiceImpl implements CarService {
     private final CarRepository carRepository;
     private final CarMapper carMapper;
