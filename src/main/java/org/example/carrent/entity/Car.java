@@ -21,7 +21,11 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "car_model", nullable = false)
+    private CarModel carModel;
 
     @Column(name = "registration_number", nullable = false,unique = true)
     private String registrationNumber;

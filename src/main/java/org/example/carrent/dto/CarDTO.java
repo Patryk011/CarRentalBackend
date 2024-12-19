@@ -17,7 +17,8 @@ import java.time.LocalDate;
 @Builder
 public class CarDTO {
 
-    private Long Id;
+    private Long id;
+    private Long carModelId;
     private String registrationNumber;
     private LocalDate purchaseDate;
     private CarState state;

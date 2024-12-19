@@ -2,6 +2,9 @@ package org.example.carrent.mapper;
 
 import org.example.carrent.dto.CarDTO;
 import org.example.carrent.entity.Car;
+import org.example.carrent.entity.CarModel;
+import org.example.carrent.exception.ResourceNotFoundException;
+import org.example.carrent.repository.CarModelRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -9,10 +12,16 @@ import java.util.stream.Collectors;
 
 @Component
 public class CarMapper {
+    private final CarModelRepository carModelRepository;
+
+    public CarMapper(CarModelRepository carModelRepository) {
+        this.carModelRepository = carModelRepository;
+    }
 
     public static CarDTO toDto(Car car) {
         CarDTO dto = new CarDTO();
         dto.setId(car.getId());
+        dto.setCarModelId(car.getCarModel().getId());
         dto.setRegistrationNumber(car.getRegistrationNumber());
         dto.setPurchaseDate(car.getPurchaseDate());
         dto.setState(car.getState());
@@ -31,6 +40,7 @@ public class CarMapper {
 
     public static Car toEntity(CarDTO dto) {
         Car car = new Car();
+        CarModel carModel = carModelRepository.findById(dto.getCarModelId()).orElseThrow(() -> new ResourceNotFoundException("Car model with id " + dto.getCarModelId() + " not found"));
         car.setId(dto.getId());
         car.setRegistrationNumber(dto.getRegistrationNumber());
         car.setPurchaseDate(dto.getPurchaseDate());
