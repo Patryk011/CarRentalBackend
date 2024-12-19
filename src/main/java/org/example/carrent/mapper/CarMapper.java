@@ -38,24 +38,24 @@ public class CarMapper {
         return dto;
     }
 
-    public static Car toEntity(CarDTO dto) {
-        Car car = new Car();
+    public Car toEntity(CarDTO dto) {
+        Car entity = new Car();
         CarModel carModel = carModelRepository.findById(dto.getCarModelId()).orElseThrow(() -> new ResourceNotFoundException("Car model with id " + dto.getCarModelId() + " not found"));
-        car.setId(dto.getId());
-        car.setRegistrationNumber(dto.getRegistrationNumber());
-        car.setPurchaseDate(dto.getPurchaseDate());
-        car.setState(dto.getState());
-        car.setVin(dto.getVin());
-        car.setProductionYear(dto.getProductionYear());
-        car.setColor(dto.getColor());
-        car.setPricePerHour(dto.getPricePerHour());
-        car.setTransmission(dto.getTransmission());
-        car.setFuelType(dto.getFuelType());
-        car.setSeats(dto.getSeats());
-        car.setLastServiceDate(dto.getLastServiceDate());
-        car.setNextServiceDate(dto.getNextServiceDate());
-        car.setEngineCapacity(dto.getEngineCapacity());
-        return car;
+        entity.setId(dto.getId());
+        entity.setRegistrationNumber(dto.getRegistrationNumber());
+        entity.setPurchaseDate(dto.getPurchaseDate());
+        entity.setState(dto.getState());
+        entity.setVin(dto.getVin());
+        entity.setProductionYear(dto.getProductionYear());
+        entity.setColor(dto.getColor());
+        entity.setPricePerHour(dto.getPricePerHour());
+        entity.setTransmission(dto.getTransmission());
+        entity.setFuelType(dto.getFuelType());
+        entity.setSeats(dto.getSeats());
+        entity.setLastServiceDate(dto.getLastServiceDate());
+        entity.setNextServiceDate(dto.getNextServiceDate());
+        entity.setEngineCapacity(dto.getEngineCapacity());
+        return entity;
     }
 
     public static List<CarDTO> toDto(List<Car> cars){
