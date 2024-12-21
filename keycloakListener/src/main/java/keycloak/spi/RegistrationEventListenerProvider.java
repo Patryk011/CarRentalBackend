@@ -14,6 +14,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class RegistrationEventListenerProvider implements EventListenerProvider {
     private final KeycloakSession session;
@@ -36,13 +38,17 @@ public class RegistrationEventListenerProvider implements EventListenerProvider 
             String firstName = user.getFirstName();
             String lastName = user.getLastName();
             String email = user.getEmail();
-            String phoneNumber = user.getFirstAttribute("phone_number");
+            String phoneNumber = user.getFirstAttribute("phoneNumber");
 
             HashMap<String, Object> customerData = new HashMap<>();
             customerData.put("firstName", firstName);
             customerData.put("lastName", lastName);
             customerData.put("email", email);
             customerData.put("phoneNumber", phoneNumber);
+
+            System.out.println("Customer data: " + customerData);
+
+
 
             try {
                 String requestBody = objectMapper.writeValueAsString(customerData);
