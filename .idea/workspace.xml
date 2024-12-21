@@ -5,20 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c8ee348-1192-4baa-a1d2-008b61933676" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarRental.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarRental/src/main/resources/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/Controllers/CarController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/repository/CarRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/service/CarService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/service/CarServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/dto/CarDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/entity/Car.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/enums/CarFuelType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/enums/CarState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/enums/CarTransmission.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/mapper/CarMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/dto/CarDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/dto/CarDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/entity/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/entity/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/mapper/CarMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/mapper/CarMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,9 +58,10 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.CarRentalApplication.executor": "Run",
-    "git-widget-placeholder": "Cherry-picking in main",
+    "git-widget-placeholder": "feat/restForCarOnNewStructure",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/STUDIA/INFOMATYKA/SEM_VII/PROJEKT_ZESPOLOWY/CarRentalBackend/CarRental",
+    "last_opened_file_path": "D:/STUDIA/INFOMATYKA/SEM_VII/PROJEKT_ZESPOLOWY/CarRentalBackend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -74,7 +70,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.27816093",
-    "settings.editor.selected.configurable": "configurable.group.build",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -145,6 +141,7 @@
       <workItem from="1734798208343" duration="1293000" />
       <workItem from="1734799637290" duration="5201000" />
       <workItem from="1734814615650" duration="100000" />
+      <workItem from="1734814735687" duration="781000" />
     </task>
     <servers />
   </component>
@@ -152,11 +149,43 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
