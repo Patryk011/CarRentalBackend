@@ -4,49 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22aa01ac-fa34-448d-bab2-81a252e2df29" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+    <list default="true" id="3c8ee348-1192-4baa-a1d2-008b61933676" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarRental.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarRental/src/main/resources/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/dto/CarDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/entity/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/enums/CarFuelType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/enums/CarState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/enums/CarTransmission.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/mapper/CarMapper.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$/CarRental">
-      <ProjectState />
-    </projectState>
-  </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <task path="$PROJECT_DIR$/CarRental">
-          <activation />
-        </task>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="CarRental" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -54,35 +37,35 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2qPOs53O5KgrwvCQYa9BdpdMiqc" />
+  <component name="ProjectId" id="2n7fqSCtCUlYZ5O0OrOXnWSwf7N" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Notification.DisplayName-DoNotAsk-Database detector": "Database detector",
-    "Notification.DoNotAsk-Database detector": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.KeycloakListenerApplication.executor": "Run",
-    "git-widget-placeholder": "Merging main",
+    "Spring Boot.CarRentalApplication.executor": "Run",
+    "git-widget-placeholder": "Cherry-picking in main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/patryk/CarRentProject/CarRentalBackend/CarRental",
+    "last_opened_file_path": "D:/STUDIA/INFOMATYKA/SEM_VII/PROJEKT_ZESPOLOWY/CarRentalBackend/CarRental",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,39 +73,23 @@
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.fileTypes",
+    "project.structure.side.proportion": "0.27816093",
+    "settings.editor.selected.configurable": "configurable.group.build",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/CarRental" />
-      <recent name="$PROJECT_DIR$/CarRental/src/main/resources" />
-      <recent name="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent" />
-      <recent name="$PROJECT_DIR$/providers" />
+      <recent name="D:\STUDIA\INFOMATYKA\SEM_VII\PROJEKT_ZESPOLOWY\CarRentalBackend\CarRental\src\main\resources" />
+      <recent name="D:\STUDIA\INFOMATYKA\SEM_VII\PROJEKT_ZESPOLOWY\CarRentalBackend\CarRental\src\main\java\org\example\carrent" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent" />
-      <recent name="$PROJECT_DIR$/providers" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/keycloakListener/src/main/java/keycloak" />
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="org.example.carrent.service" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="configurationTypes">
-      <set>
-        <option value="KtorApplicationConfigurationType" />
-        <option value="MicronautRunConfigurationType" />
-        <option value="QuarkusRunConfigurationType" />
-        <option value="SpringBootApplicationConfigurationType" />
-      </set>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="CarRentalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="CarRental" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.carrent.CarRentalApplication" />
       <method v="2">
@@ -133,37 +100,66 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="22aa01ac-fa34-448d-bab2-81a252e2df29" name="Changes" comment="" />
-      <created>1734560946982</created>
+      <changelist id="3c8ee348-1192-4baa-a1d2-008b61933676" name="Changes" comment="" />
+      <created>1728329226221</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1734560946982</updated>
-      <workItem from="1734560948112" duration="12537000" />
-      <workItem from="1734668401219" duration="3856000" />
-      <workItem from="1734786083431" duration="7114000" />
-      <workItem from="1734794426457" duration="367000" />
-      <workItem from="1734794800321" duration="6069000" />
-      <workItem from="1734801176813" duration="31000" />
-      <workItem from="1734801215956" duration="1332000" />
-      <workItem from="1734802555373" duration="253000" />
-      <workItem from="1734802829874" duration="4402000" />
-      <workItem from="1734807263411" duration="687000" />
+      <updated>1728329226221</updated>
+      <workItem from="1728329227358" duration="4135000" />
+      <workItem from="1728557029888" duration="2852000" />
+      <workItem from="1728560067598" duration="1010000" />
+      <workItem from="1728936076477" duration="12709000" />
+      <workItem from="1729427095044" duration="1718000" />
+      <workItem from="1729534866109" duration="4755000" />
+      <workItem from="1730053411399" duration="828000" />
+      <workItem from="1730054380479" duration="1139000" />
+      <workItem from="1730055572341" duration="545000" />
+      <workItem from="1730056406430" duration="60000" />
+      <workItem from="1730056631928" duration="53000" />
+      <workItem from="1730566024509" duration="350000" />
+      <workItem from="1730747657116" duration="8842000" />
+      <workItem from="1730848203244" duration="2502000" />
+      <workItem from="1731014932017" duration="1554000" />
+      <workItem from="1731018155036" duration="3539000" />
+      <workItem from="1731350634262" duration="519000" />
+      <workItem from="1731451961139" duration="115000" />
+      <workItem from="1731612459391" duration="9626000" />
+      <workItem from="1732046027063" duration="1370000" />
+      <workItem from="1732050586371" duration="575000" />
+      <workItem from="1732051506243" duration="480000" />
+      <workItem from="1732216095337" duration="9934000" />
+      <workItem from="1732438376611" duration="8000" />
+      <workItem from="1732569265527" duration="2089000" />
+      <workItem from="1732571481575" duration="8500000" />
+      <workItem from="1732736819018" duration="43330000" />
+      <workItem from="1734254942035" duration="19145000" />
+      <workItem from="1734796947423" duration="1183000" />
+      <workItem from="1734798208343" duration="1293000" />
+      <workItem from="1734799637290" duration="5201000" />
+      <workItem from="1734814615650" duration="100000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
