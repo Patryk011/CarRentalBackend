@@ -41,6 +41,7 @@ public class CarMapper {
     public Car toEntity(CarDTO dto) {
         Car entity = new Car();
         CarModel carModel = carModelRepository.findById(dto.getCarModelId()).orElseThrow(() -> new ResourceNotFoundException("Car model with id " + dto.getCarModelId() + " not found"));
+        entity.setCarModel(carModel);
         entity.setId(dto.getId());
         entity.setRegistrationNumber(dto.getRegistrationNumber());
         entity.setPurchaseDate(dto.getPurchaseDate());

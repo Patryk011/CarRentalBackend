@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c8ee348-1192-4baa-a1d2-008b61933676" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/Controllers/CarController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/repository/CarRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/service/CarService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/service/CarServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/dto/CarDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/dto/CarDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/entity/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/entity/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/mapper/CarMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/mapper/CarMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +134,7 @@
       <workItem from="1734798208343" duration="1293000" />
       <workItem from="1734799637290" duration="5201000" />
       <workItem from="1734814615650" duration="100000" />
-      <workItem from="1734814735687" duration="781000" />
+      <workItem from="1734814735687" duration="4716000" />
     </task>
     <servers />
   </component>
