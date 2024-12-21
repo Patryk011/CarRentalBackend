@@ -1,7 +1,9 @@
 version: '3'
 services:
   spring-backend:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "8081:8081"
     environment:
@@ -33,5 +35,6 @@ services:
       - ./keycloak-theme/carRentalTheme:/opt/keycloak/themes/carRentalTheme
       - ./certs/keycloak-local.crt:/etc/x509/https/tls.crt
       - ./certs/keycloak-local.key:/etc/x509/https/tls.key
+      - ./providers:/opt/keycloak/providers
     command: start-dev
     restart: unless-stopped

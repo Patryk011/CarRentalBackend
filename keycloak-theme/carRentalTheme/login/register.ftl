@@ -30,6 +30,9 @@
                 <label for="password-confirm">Potwierdź hasło</label>
                 <input type="password" id="password-confirm" name="password-confirm" placeholder="Potwierdź hasło" required />
 
+                <label for="phoneNumber">Numer telefonu</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Podaj numer telefonu" required/>
+
                 <button type="submit" class="register-btn">Zarejestruj się</button>
                 <a href="${url.loginUrl}">Masz już konto? Zaloguj się</a>
             </form>
