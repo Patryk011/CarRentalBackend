@@ -5,20 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c8ee348-1192-4baa-a1d2-008b61933676" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarRental.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarRental/src/main/resources/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/entity/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarRental/src/main/resources/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/dto/CarDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/entity/Car.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/enums/CarFuelType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/enums/CarState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/enums/CarTransmission.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/carrent/mapper/CarMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/Security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/Security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,10 +57,11 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.CarRentalApplication.executor": "Run",
-    "git-widget-placeholder": "Cherry-picking in main",
+    "git-widget-placeholder": "feat/Payment",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/STUDIA/INFOMATYKA/SEM_VII/PROJEKT_ZESPOLOWY/CarRentalBackend/CarRental",
+    "last_opened_file_path": "/home/patryk/CarRentProject/CarRentalBackend/CarRental/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -80,6 +76,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CarRental/src/main/resources" />
       <recent name="D:\STUDIA\INFOMATYKA\SEM_VII\PROJEKT_ZESPOLOWY\CarRentalBackend\CarRental\src\main\resources" />
       <recent name="D:\STUDIA\INFOMATYKA\SEM_VII\PROJEKT_ZESPOLOWY\CarRentalBackend\CarRental\src\main\java\org\example\carrent" />
     </key>
@@ -100,8 +97,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
       </set>
     </attachedChunks>
   </component>
@@ -145,6 +142,7 @@
       <workItem from="1734798208343" duration="1293000" />
       <workItem from="1734799637290" duration="5201000" />
       <workItem from="1734814615650" duration="100000" />
+      <workItem from="1734952313549" duration="9654000" />
     </task>
     <servers />
   </component>
