@@ -34,6 +34,12 @@ server:
   port: 8081
 
 
+payu:
+  clientId: 486902
+  clientSecret: c1bbbfdc86759ff5bb6429d5186cf173
+  authUrl: https://secure.snd.payu.com/pl/standard/user/oauth/authorize
+  paymentUrl: https://secure.snd.payu.com/api/v2_1/orders
+
 logging:
   level:
     org.springframework.security: DEBUG
