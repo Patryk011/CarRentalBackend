@@ -11,7 +11,7 @@ public class PaymentDTO {
 
     private Long id;
     private String payuOrderId;
-    private CustomerDTO customer;
+    private String customerEmail;
     private Double amount;
     private String description;
     private String paymentStatus;

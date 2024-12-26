@@ -1,6 +1,7 @@
 package org.example.carrent.mapper;
 
 import org.example.carrent.dto.PaymentDTO;
+import org.example.carrent.entity.Customer;
 import org.example.carrent.entity.Payment;
 import org.springframework.stereotype.Component;
 
@@ -20,7 +21,7 @@ public class PaymentMapper {
         return PaymentDTO.builder()
                 .id(payment.getId())
                 .payuOrderId(payment.getPayuOrderId())
-                .customer(customerMapper.toDto(payment.getCustomer()))
+                .customerEmail(payment.getCustomer() != null ? payment.getCustomer().getEmail() : null)
                 .amount(payment.getAmount())
                 .description(payment.getDescription())
                 .paymentStatus(payment.getPaymentStatus())
@@ -35,11 +36,11 @@ public class PaymentMapper {
                 .collect(Collectors.toList());
     }
 
-    public Payment toEntity(PaymentDTO dto) {
+    public Payment toEntity(PaymentDTO dto, Customer customer) {
         Payment payment = new Payment();
         payment.setId(dto.getId());
         payment.setPayuOrderId(dto.getPayuOrderId());
-        payment.setCustomer(customerMapper.toEntity(dto.getCustomer()));
+        payment.setCustomer(customer);
         payment.setAmount(dto.getAmount());
         payment.setDescription(dto.getDescription());
         payment.setPaymentStatus(dto.getPaymentStatus());

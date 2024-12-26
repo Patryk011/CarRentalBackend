@@ -26,8 +26,6 @@ public class Payment {
     private String payuOrderId;
 
 
-
-
     @ManyToOne
     @JoinColumn(name="email")
     private Customer customer;
