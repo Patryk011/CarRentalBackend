@@ -21,7 +21,11 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "model_id", nullable = false)
+    private CarModel carModel;
 
     @Column(name = "registration_number", nullable = false,unique = true)
     private String registrationNumber;
@@ -37,7 +41,7 @@ public class Car {
     private String vin;
 
     @Column(name = "production_year", nullable = false)
-    private LocalDate productionYear;
+    private Integer productionYear;
 
     @Column(name = "color", nullable = false)
     private String color;
@@ -63,5 +67,5 @@ public class Car {
     private LocalDate nextServiceDate;
 
     @Column(name = "engine_capacity")
-    private LocalDate engineCapacity;
+    private Integer engineCapacity;
 }
