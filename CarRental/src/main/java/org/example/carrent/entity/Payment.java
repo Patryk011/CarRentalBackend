@@ -27,7 +27,7 @@ public class Payment {
 
 
     @ManyToOne
-    @JoinColumn(name="email")
+    @JoinColumn(name="email", referencedColumnName = "email")
     private Customer customer;
 
 

@@ -28,6 +28,8 @@ public class PayUController {
         String orderId = (String) order.get("orderId");
         String status = (String) order.get("status");
 
+        System.out.println("Received PayU Webhook Payload: " + payload);
+
         Payment payment = paymentRepository.findAll()
                 .stream()
                 .filter(p -> orderId.equals(p.getPayuOrderId()))
