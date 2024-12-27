@@ -6,12 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="keycloakListener" />
+        <module name="CarRental" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="CarRental" options="" />
+      <module name="CarRental" options="-parameters" />
+      <module name="CarRentalBackend" options="" />
       <module name="keycloakListener" options="-parameters" />
     </option>
   </component>

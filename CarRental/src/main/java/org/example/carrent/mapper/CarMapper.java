@@ -2,6 +2,9 @@ package org.example.carrent.mapper;
 
 import org.example.carrent.dto.CarDTO;
 import org.example.carrent.entity.Car;
+import org.example.carrent.entity.CarModel;
+import org.example.carrent.exception.ResourceNotFoundException;
+import org.example.carrent.repository.CarModelRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -9,10 +12,16 @@ import java.util.stream.Collectors;
 
 @Component
 public class CarMapper {
+    private final CarModelRepository carModelRepository;
+
+    public CarMapper(CarModelRepository carModelRepository) {
+        this.carModelRepository = carModelRepository;
+    }
 
     public static CarDTO toDto(Car car) {
         CarDTO dto = new CarDTO();
         dto.setId(car.getId());
+        dto.setCarModelId(car.getCarModel().getId());
         dto.setRegistrationNumber(car.getRegistrationNumber());
         dto.setPurchaseDate(car.getPurchaseDate());
         dto.setState(car.getState());
@@ -29,23 +38,25 @@ public class CarMapper {
         return dto;
     }
 
-    public static Car toEntity(CarDTO dto) {
-        Car car = new Car();
-        car.setId(dto.getId());
-        car.setRegistrationNumber(dto.getRegistrationNumber());
-        car.setPurchaseDate(dto.getPurchaseDate());
-        car.setState(dto.getState());
-        car.setVin(dto.getVin());
-        car.setProductionYear(dto.getProductionYear());
-        car.setColor(dto.getColor());
-        car.setPricePerHour(dto.getPricePerHour());
-        car.setTransmission(dto.getTransmission());
-        car.setFuelType(dto.getFuelType());
-        car.setSeats(dto.getSeats());
-        car.setLastServiceDate(dto.getLastServiceDate());
-        car.setNextServiceDate(dto.getNextServiceDate());
-        car.setEngineCapacity(dto.getEngineCapacity());
-        return car;
+    public Car toEntity(CarDTO dto) {
+        Car entity = new Car();
+        CarModel carModel = carModelRepository.findById(dto.getCarModelId()).orElseThrow(() -> new ResourceNotFoundException("Car model with id " + dto.getCarModelId() + " not found"));
+        entity.setCarModel(carModel);
+        entity.setId(dto.getId());
+        entity.setRegistrationNumber(dto.getRegistrationNumber());
+        entity.setPurchaseDate(dto.getPurchaseDate());
+        entity.setState(dto.getState());
+        entity.setVin(dto.getVin());
+        entity.setProductionYear(dto.getProductionYear());
+        entity.setColor(dto.getColor());
+        entity.setPricePerHour(dto.getPricePerHour());
+        entity.setTransmission(dto.getTransmission());
+        entity.setFuelType(dto.getFuelType());
+        entity.setSeats(dto.getSeats());
+        entity.setLastServiceDate(dto.getLastServiceDate());
+        entity.setNextServiceDate(dto.getNextServiceDate());
+        entity.setEngineCapacity(dto.getEngineCapacity());
+        return entity;
     }
 
     public static List<CarDTO> toDto(List<Car> cars){
