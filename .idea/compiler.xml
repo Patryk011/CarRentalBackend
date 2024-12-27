@@ -14,7 +14,6 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="CarRental" options="-parameters" />
-      <module name="CarRentalBackend" options="" />
       <module name="keycloakListener" options="-parameters" />
     </option>
   </component>
