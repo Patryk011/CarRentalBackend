@@ -19,7 +19,7 @@ public class DiscountMapper {
         return dto;
     }
 
-    public static Discount toEntity(DiscountDTO dto) {
+    public Discount toEntity(DiscountDTO dto) {
         Discount entity = new Discount();
         entity.setId(dto.getId());
         entity.setName(dto.getName());
