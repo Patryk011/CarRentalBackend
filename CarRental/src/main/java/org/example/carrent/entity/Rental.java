@@ -28,10 +28,6 @@ public class Rental {
     @JoinColumn(name = "car_id", nullable = false)
     private Car car;
 
-    @ManyToOne
-    @JoinColumn(name = "discount_id")
-    private Discount discount;
-
     @Column(name = "start_date", nullable = false)
     private LocalDateTime startDate;
 

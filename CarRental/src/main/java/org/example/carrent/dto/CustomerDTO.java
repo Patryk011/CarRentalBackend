@@ -18,4 +18,5 @@ public class CustomerDTO {
     private String licenseNumber;
     private String address;
     private Long registrationDate;
+    private Long discountId;
 }
