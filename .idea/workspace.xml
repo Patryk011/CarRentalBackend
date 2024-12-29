@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c8ee348-1192-4baa-a1d2-008b61933676" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/Controllers/DiscountController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/repository/DiscountRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/service/DiscountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/service/DiscountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/entity/Rental.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/enums/RentalStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/mapper/DiscountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/mapper/DiscountMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +17,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -56,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.CarRentalApplication.executor": "Run",
-    "git-widget-placeholder": "preparingRestForDiscount",
+    "git-widget-placeholder": "feat/restForRent",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "//wsl.localhost/Ubuntu/home/patryk/CarRentalProject/CarRentalBackend",
     "node.js.detected.package.eslint": "true",
