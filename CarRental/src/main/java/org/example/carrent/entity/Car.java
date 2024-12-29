@@ -30,9 +30,6 @@ public class Car {
     @Column(name = "registration_number", nullable = false,unique = true)
     private String registrationNumber;
 
-    @Column(name = "purchase_date", nullable = false)
-    private LocalDate purchaseDate;
-
     @Enumerated(EnumType.STRING)
     @Column(name = "state", nullable = false)
     private CarState state;
@@ -47,7 +44,7 @@ public class Car {
     private String color;
 
     @Column(name = "price_per_hour", nullable = false)
-    private Integer pricePerHour;
+    private Long pricePerHour;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "transmission", nullable = false)
@@ -59,12 +56,6 @@ public class Car {
 
     @Column(name = "seats", nullable = false)
     private Integer seats;
-
-    @Column(name = "last_service_date")
-    private LocalDate lastServiceDate;
-
-    @Column(name = "next_service_date")
-    private LocalDate nextServiceDate;
 
     @Column(name = "engine_capacity")
     private Integer engineCapacity;

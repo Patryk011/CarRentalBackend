@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c8ee348-1192-4baa-a1d2-008b61933676" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/Controllers/PayUController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/Controllers/PayUController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/entity/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/entity/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/dto/CarDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/dto/CarDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/dto/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/dto/CustomerDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/dto/RentalDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/dto/RentalDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/entity/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/entity/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/entity/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/entity/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/entity/Rental.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/enums/CarState.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/enums/CarState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/mapper/CarMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/mapper/CarMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/mapper/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/mapper/CustomerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/mapper/RentalMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/mapper/RentalMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +61,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Spring Boot.CarRentalApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat/Payment&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/changingReturnedDataFromEndpoints&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/home/patryk/CarRentalProject/CarRentalBackend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -80,6 +87,19 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="CarRental" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="CarRental" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CarRentalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="CarRental" />

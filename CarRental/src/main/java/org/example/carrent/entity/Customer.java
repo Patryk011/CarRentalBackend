@@ -40,4 +40,8 @@ public class Customer {
 
     @Column(name = "registration_date")
     private Long registrationDate;
+
+    @ManyToOne
+    @JoinColumn(name = "discount_id")
+    private Discount discount;
 }
