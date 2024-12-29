@@ -14,4 +14,5 @@ public class CarModelDTO {
     private Long id;
     private String model;
     private Long carBrandId;
+    private String carBrandName;
 }
