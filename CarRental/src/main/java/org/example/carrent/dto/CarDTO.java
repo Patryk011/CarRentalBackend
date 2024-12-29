@@ -9,6 +9,7 @@ import org.example.carrent.enums.CarFuelType;
 import org.example.carrent.enums.CarState;
 import org.example.carrent.enums.CarTransmission;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
@@ -19,17 +20,16 @@ public class CarDTO {
 
     private Long id;
     private Long carModelId;
+    private String carModelName;
+    private String carBrandName;
     private String registrationNumber;
-    private LocalDate purchaseDate;
     private CarState state;
     private String vin;
     private Integer productionYear;
     private String color;
-    private Integer pricePerHour;
+    private BigDecimal pricePerHour;
     private CarTransmission transmission;
     private CarFuelType fuelType;
     private Integer seats;
-    private LocalDate lastServiceDate;
-    private LocalDate nextServiceDate;
     private Integer engineCapacity;
 }

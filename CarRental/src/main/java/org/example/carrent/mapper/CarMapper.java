@@ -7,6 +7,7 @@ import org.example.carrent.exception.ResourceNotFoundException;
 import org.example.carrent.repository.CarModelRepository;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,18 +23,17 @@ public class CarMapper {
         CarDTO dto = new CarDTO();
         dto.setId(car.getId());
         dto.setCarModelId(car.getCarModel().getId());
+        dto.setCarModelName(car.getCarModel().getModel());
+        dto.setCarBrandName(car.getCarModel().getCarBrand().getBrand());
         dto.setRegistrationNumber(car.getRegistrationNumber());
-        dto.setPurchaseDate(car.getPurchaseDate());
         dto.setState(car.getState());
         dto.setVin(car.getVin());
         dto.setProductionYear(car.getProductionYear());
         dto.setColor(car.getColor());
-        dto.setPricePerHour(car.getPricePerHour());
+        dto.setPricePerHour(BigDecimal.valueOf(car.getPricePerHour()).divide(BigDecimal.valueOf(100)));
         dto.setTransmission(car.getTransmission());
         dto.setFuelType(car.getFuelType());
         dto.setSeats(car.getSeats());
-        dto.setLastServiceDate(car.getLastServiceDate());
-        dto.setNextServiceDate(car.getNextServiceDate());
         dto.setEngineCapacity(car.getEngineCapacity());
         return dto;
     }
@@ -44,17 +44,14 @@ public class CarMapper {
         entity.setCarModel(carModel);
         entity.setId(dto.getId());
         entity.setRegistrationNumber(dto.getRegistrationNumber());
-        entity.setPurchaseDate(dto.getPurchaseDate());
         entity.setState(dto.getState());
         entity.setVin(dto.getVin());
         entity.setProductionYear(dto.getProductionYear());
         entity.setColor(dto.getColor());
-        entity.setPricePerHour(dto.getPricePerHour());
+        entity.setPricePerHour(dto.getPricePerHour().multiply(BigDecimal.valueOf(100)).longValue());
         entity.setTransmission(dto.getTransmission());
         entity.setFuelType(dto.getFuelType());
         entity.setSeats(dto.getSeats());
-        entity.setLastServiceDate(dto.getLastServiceDate());
-        entity.setNextServiceDate(dto.getNextServiceDate());
         entity.setEngineCapacity(dto.getEngineCapacity());
         return entity;
     }

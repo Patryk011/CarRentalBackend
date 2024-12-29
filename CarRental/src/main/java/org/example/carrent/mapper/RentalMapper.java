@@ -18,13 +18,11 @@ import java.util.stream.Collectors;
 public class RentalMapper {
     private final CustomerRepository customerRepository;
     private final CarRepository carRepository;
-    private final DiscountRepository discountRepository;
 
 
-    public RentalMapper(CustomerRepository customerRepository, CarRepository carRepository, DiscountRepository discountRepository) {
+    public RentalMapper(CustomerRepository customerRepository, CarRepository carRepository) {
         this.customerRepository = customerRepository;
         this.carRepository = carRepository;
-        this.discountRepository = discountRepository;
     }
 
     public static RentalDTO toDto(Rental rental) {
@@ -32,7 +30,6 @@ public class RentalMapper {
         dto.setId(rental.getId());
         dto.setCustomerId(rental.getCustomer().getId());
         dto.setCarId(rental.getCar().getId());
-        dto.setDiscountId(rental.getDiscount().getId());
         dto.setStartDate(rental.getStartDate());
         dto.setFinishDate(rental.getFinishDate());
         dto.setStatus(rental.getStatus());
@@ -43,11 +40,9 @@ public class RentalMapper {
         Rental entity = new Rental();
         Customer customer = customerRepository.findById(dto.getCustomerId()).orElseThrow(() -> new ResourceNotFoundException("Customer with id " + dto.getCustomerId() + " not found"));
         Car car = carRepository.findById(dto.getCarId()).orElseThrow(() -> new ResourceNotFoundException("Car with id " + dto.getCarId() + " not found"));
-        Discount discount = discountRepository.findById(dto.getDiscountId()).orElseThrow(() -> new ResourceNotFoundException("Discount with id " + dto.getDiscountId() + " not found"));
         entity.setId(dto.getId());
         entity.setCustomer(customer);
         entity.setCar(car);
-        entity.setDiscount(discount);
         entity.setStatus(dto.getStatus());
         entity.setStartDate(dto.getStartDate());
         entity.setFinishDate(dto.getFinishDate());
