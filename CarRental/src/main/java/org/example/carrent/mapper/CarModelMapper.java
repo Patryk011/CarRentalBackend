@@ -24,6 +24,7 @@ public class CarModelMapper {
         dto.setId(carModel.getId());
         dto.setModel(carModel.getModel());
         dto.setCarBrandId(carModel.getCarBrand().getId());
+        dto.setCarBrandName(carModel.getCarBrand().getBrand());
 
         return dto;
     }
