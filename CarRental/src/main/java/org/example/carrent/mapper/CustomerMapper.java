@@ -2,6 +2,9 @@ package org.example.carrent.mapper;
 
 import org.example.carrent.entity.Customer;
 import org.example.carrent.dto.CustomerDTO;
+import org.example.carrent.entity.Discount;
+import org.example.carrent.exception.ResourceNotFoundException;
+import org.example.carrent.repository.DiscountRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -9,6 +12,11 @@ import java.util.stream.Collectors;
 
 @Component
 public class CustomerMapper {
+    private final DiscountRepository discountRepository;
+
+    public CustomerMapper(DiscountRepository discountRepository) {
+        this.discountRepository = discountRepository;
+    }
 
     public static CustomerDTO toDto(Customer customer) {
         CustomerDTO dto = new CustomerDTO();
@@ -21,6 +29,7 @@ public class CustomerMapper {
         dto.setLicenseNumber(String.valueOf(customer.getLicenseNumber()));
         dto.setAddress(customer.getAddress());
         dto.setRegistrationDate(customer.getRegistrationDate());
+        dto.setDiscountId(customer.getDiscount().getId());
         return dto;
     }
 
@@ -29,7 +38,7 @@ public class CustomerMapper {
                 .collect(Collectors.toList());
     }
 
-    public static Customer toEntity(CustomerDTO dto) {
+    public Customer toEntity(CustomerDTO dto) {
         Customer entity = new Customer();
         entity.setId(dto.getId());
         entity.setFirstName(dto.getFirstName());
@@ -40,6 +49,8 @@ public class CustomerMapper {
         entity.setLicenseNumber(dto.getLicenseNumber());
         entity.setAddress(dto.getAddress());
         entity.setRegistrationDate(dto.getRegistrationDate());
+        Discount discount = discountRepository.findById(dto.getDiscountId()).orElseThrow(() -> new ResourceNotFoundException("Discount with id " + dto.getDiscountId() + " not found"));
+        entity.setDiscount(discount);
         return entity;
     }
 }
