@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c8ee348-1192-4baa-a1d2-008b61933676" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/dto/RentalDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/mapper/RentalMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/repository/RentalRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/service/RentalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/service/RentalServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
