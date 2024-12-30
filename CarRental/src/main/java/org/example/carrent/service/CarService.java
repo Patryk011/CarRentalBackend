@@ -4,6 +4,8 @@ import org.example.carrent.dto.CarDTO;
 import org.example.carrent.dto.CarModelDTO;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public interface CarService {
@@ -13,4 +15,6 @@ public interface CarService {
     CarDTO findCarById(Long id);
 
     List<CarDTO> getAllCars();
+
+    List<CarDTO> findAvailableCars(LocalDate startDate, LocalDate endDate);
 }
