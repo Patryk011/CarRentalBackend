@@ -1,10 +1,14 @@
 package org.example.carrent.Controllers;
 
 import org.example.carrent.dto.CarDTO;
+import org.example.carrent.entity.Car;
 import org.example.carrent.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @RestController
@@ -30,5 +34,13 @@ public class CarController {
     @GetMapping("/{id}")
     public CarDTO getCarById(@PathVariable Long id) {
         return carService.findCarById(id);
+    }
+
+    @GetMapping("/available")
+    public List<CarDTO> getAvailableCars(@RequestParam("startDate") String startDate, @RequestParam("endDate") String endDate) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate formattedStartDate = LocalDate.parse(startDate, formatter);
+        LocalDate formattedEndDate = LocalDate.parse(endDate, formatter);
+        return carService.findAvailableCars(formattedStartDate,formattedEndDate);
     }
 }
