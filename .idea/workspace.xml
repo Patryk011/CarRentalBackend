@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c8ee348-1192-4baa-a1d2-008b61933676" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/dto/AvailabilityRequestDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/enums/RentalStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/enums/RentalStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/repository/RentalRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/repository/RentalRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/service/RentalServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/service/RentalServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/Controllers/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/Controllers/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/dto/RentalDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/dto/RentalDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/entity/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/entity/Rental.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/repository/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/repository/CarRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/service/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/service/CarServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental/src/main/java/org/example/carrent/service/CarServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

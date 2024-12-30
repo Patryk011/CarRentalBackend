@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.example.carrent.enums.RentalStatus;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -29,10 +30,10 @@ public class Rental {
     private Car car;
 
     @Column(name = "start_date", nullable = false)
-    private LocalDateTime startDate;
+    private LocalDate startDate;
 
     @Column(name = "finish_date")
-    private LocalDateTime finishDate;
+    private LocalDate finishDate;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
