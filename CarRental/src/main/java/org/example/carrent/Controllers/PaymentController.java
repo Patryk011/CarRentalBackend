@@ -1,6 +1,6 @@
 package org.example.carrent.Controllers;
 
-import org.example.carrent.configuration.PaymentCreationResponse;
+import org.example.carrent.payuConfiguration.PaymentCreationResponse;
 import org.example.carrent.dto.PaymentDTO;
 import org.example.carrent.service.PaymentService;
 import org.springframework.http.HttpStatus;

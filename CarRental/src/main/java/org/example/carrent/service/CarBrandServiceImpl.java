@@ -28,6 +28,9 @@ public class CarBrandServiceImpl implements CarBrandService {
 
     @Override
     public CarBrandDTO addCarBrand(CarBrandDTO carBrandDTO) {
+        if (carBrandDTO.getId() != null) {
+            throw new IllegalArgumentException("New car brands should not have an ID");
+        }
         CarBrand carBrand = carBrandMapper.toEntity(carBrandDTO);
         return carBrandMapper.toDto(carBrandRepository.save(carBrand));
     }
