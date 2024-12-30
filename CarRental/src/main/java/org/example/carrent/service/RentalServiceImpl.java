@@ -36,4 +36,6 @@ public class RentalServiceImpl implements RentalService {
     public List<RentalDTO> getAllRentals() {
         return rentalMapper.toDto(rentalRepository.findAll());
     }
+
+
 }
