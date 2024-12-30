@@ -1,8 +1,8 @@
 package org.example.carrent.enums;
 
 public enum RentalStatus {
-    ONGOING,
+    CONFIRMED,
     FAILED,
-    COMPLETED,
+    FINISHED,
     CANCELLED,
 }

@@ -6,7 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.carrent.enums.RentalStatus;
-import java.time.LocalDateTime;
+
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
@@ -17,9 +18,9 @@ public class RentalDTO {
     private Long id;
     private Long customerId;
     private Long carId;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime startDate;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime finishDate;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate startDate;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate finishDate;
     private RentalStatus status;
 }
