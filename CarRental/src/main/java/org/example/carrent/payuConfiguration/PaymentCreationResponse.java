@@ -1,4 +1,4 @@
-package org.example.carrent.configuration;
+package org.example.carrent.payuConfiguration;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
