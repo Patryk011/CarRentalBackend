@@ -8,6 +8,8 @@ import org.example.carrent.mapper.CarMapper;
 import org.example.carrent.repository.CarRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -35,5 +37,10 @@ public class CarServiceImpl implements CarService {
     @Override
     public List<CarDTO> getAllCars() {
         return carMapper.toDto(carRepository.findAll());
+    }
+
+    @Override
+    public List<CarDTO> findAvailableCars(LocalDate startDate, LocalDate endDate) {
+        return carMapper.toDto(carRepository.findAvailableCarsInDateRange(startDate,endDate));
     }
 }
