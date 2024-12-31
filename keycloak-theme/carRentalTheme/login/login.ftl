@@ -12,7 +12,7 @@
     <div class="login-form">
 
         <form action="${url.loginAction}" method="POST">
-            <label for="username">Email</label>
+            <label for="username">Email lub nazwa użytkownika</label>
             <input type="text" id="username" name="username" placeholder="Wprowadź email" required />
             <label for="password">Hasło</label>
             <input type="password" id="password" name="password" placeholder="Wprowadź hasło" required />

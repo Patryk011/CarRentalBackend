@@ -29,6 +29,12 @@ public class Rental {
     @JoinColumn(name = "car_id", nullable = false)
     private Car car;
 
+    @OneToOne
+    @JoinColumn(name="payment_id")
+    private Payment payment;
+
+
+
     @Column(name = "start_date", nullable = false)
     private LocalDate startDate;
 
