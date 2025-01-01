@@ -43,8 +43,8 @@ public class Car {
     @Column(name = "color", nullable = false)
     private String color;
 
-    @Column(name = "price_per_hour", nullable = false)
-    private Long pricePerHour;
+    @Column(name = "price_per_day", nullable = false)
+    private Long pricePerDay;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "transmission", nullable = false)

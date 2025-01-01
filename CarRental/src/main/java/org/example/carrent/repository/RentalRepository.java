@@ -8,7 +8,4 @@ import java.util.List;
 
 public interface RentalRepository extends JpaRepository<Rental, Long> {
 
-//    @Query("")
-//    public List<Rental> findFreeReservations();
-
 }

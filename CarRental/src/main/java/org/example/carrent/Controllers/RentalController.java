@@ -33,4 +33,9 @@ public class RentalController {
     public RentalDTO getRentalById(@PathVariable Long id) {
         return rentalService.findRentalById(id);
     }
+
+    @PatchMapping("/{id}/cancel")
+    public RentalDTO cancelRental(@PathVariable Long id) {
+        return rentalService.cancelRental(id);
+    }
 }
