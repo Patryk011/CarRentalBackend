@@ -8,4 +8,5 @@ public interface RentalService {
     RentalDTO addRental(RentalDTO rentalDTO);
     RentalDTO findRentalById(Long id);
     List<RentalDTO> getAllRentals();
+    RentalDTO cancelRental(Long id);
 }
