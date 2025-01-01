@@ -1,6 +1,7 @@
 package org.example.carrent.Controllers;
 
 import org.example.carrent.dto.CarDTO;
+import org.example.carrent.dto.RentalDTO;
 import org.example.carrent.entity.Car;
 import org.example.carrent.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,5 +43,15 @@ public class CarController {
         LocalDate formattedStartDate = LocalDate.parse(startDate, formatter);
         LocalDate formattedEndDate = LocalDate.parse(endDate, formatter);
         return carService.findAvailableCars(formattedStartDate,formattedEndDate);
+    }
+
+    @PatchMapping("/{id}/block")
+    public CarDTO blockCar(@PathVariable Long id) {
+        return carService.blockCar(id);
+    }
+
+    @PatchMapping("/{id}/unlock")
+    public CarDTO unlockCar(@PathVariable Long id) {
+        return carService.unlockCar(id);
     }
 }
