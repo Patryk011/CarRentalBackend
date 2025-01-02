@@ -3,6 +3,7 @@ package org.example.carrent.service;
 import org.example.carrent.dto.CarDTO;
 import org.example.carrent.dto.CarModelDTO;
 import org.example.carrent.entity.Car;
+import org.example.carrent.enums.CarState;
 import org.example.carrent.exception.ResourceNotFoundException;
 import org.example.carrent.mapper.CarMapper;
 import org.example.carrent.repository.CarRepository;
@@ -25,6 +26,7 @@ public class CarServiceImpl implements CarService {
     @Override
     public CarDTO addCar(CarDTO carDTO) {
         Car car = carMapper.toEntity(carDTO);
+        car.setState(CarState.AVAILABLE);
         return carMapper.toDto(carRepository.save(car));
     }
 
@@ -42,5 +44,21 @@ public class CarServiceImpl implements CarService {
     @Override
     public List<CarDTO> findAvailableCars(LocalDate startDate, LocalDate endDate) {
         return carMapper.toDto(carRepository.findAvailableCarsInDateRange(startDate,endDate));
+    }
+
+    @Override
+    public CarDTO blockCar(Long id) {
+        Car car = carRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Car with id " + id + " not found"));
+        car.setState(CarState.BLOCKED);
+        carRepository.save(car);
+        return carMapper.toDto(car);
+    }
+
+    @Override
+    public CarDTO unlockCar(Long id) {
+        Car car = carRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Car with id " + id + " not found"));
+        car.setState(CarState.AVAILABLE);
+        carRepository.save(car);
+        return carMapper.toDto(car);
     }
 }

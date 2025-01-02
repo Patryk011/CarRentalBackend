@@ -17,4 +17,8 @@ public interface CarService {
     List<CarDTO> getAllCars();
 
     List<CarDTO> findAvailableCars(LocalDate startDate, LocalDate endDate);
+
+    CarDTO blockCar(Long id);
+
+    CarDTO unlockCar(Long id);
 }
