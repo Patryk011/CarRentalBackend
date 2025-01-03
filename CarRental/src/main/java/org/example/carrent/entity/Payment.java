@@ -27,8 +27,13 @@ public class Payment {
 
 
     @ManyToOne
-    @JoinColumn(name="email", referencedColumnName = "email")
+    @JoinColumn(name="customer_id")
     private Customer customer;
+
+
+    @ManyToOne
+    @JoinColumn(name = "rental_id")
+    private Rental rental;
 
 
     @Column(name = "amount", nullable = false)

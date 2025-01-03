@@ -9,6 +9,11 @@
         <div class="logo">
             <img src="${url.resourcesPath}/img/logo.png" alt="Car Rental Logo" />
         </div>
+        <kc-messages>
+            <div class="alert alert-error" data-kc-message="error"></div>
+            <div class="alert alert-warning" data-kc-message="warning"></div>
+            <div class="alert alert-info" data-kc-message="info"></div>
+        </kc-messages>
         <div class="register-form">
             <h1>Rejestracja</h1>
             <form action="${url.registrationAction}" method="POST">
@@ -32,6 +37,15 @@
 
                 <label for="phoneNumber">Numer telefonu</label>
                 <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Podaj numer telefonu" required/>
+
+                <label for="birthDate">Data urodzenia</label>
+                <input
+                        type="date"
+                        id="birthDate"
+                        name="birthDate"
+                        placeholder="YYYY-MM-DD"
+                        required
+                />
 
                 <button type="submit" class="register-btn">Zarejestruj się</button>
                 <a href="${url.loginUrl}">Masz już konto? Zaloguj się</a>

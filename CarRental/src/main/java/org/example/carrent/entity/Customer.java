@@ -3,6 +3,7 @@ package org.example.carrent.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Table(name = "customers")
@@ -41,7 +42,8 @@ public class Customer {
     @Column(name = "registration_date")
     private Long registrationDate;
 
-    @ManyToOne
-    @JoinColumn(name = "discount_id")
-    private Discount discount;
+
+
+    @Column(name = "keycloak_id")
+    private UUID keycloak_id;
 }

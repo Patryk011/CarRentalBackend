@@ -29,7 +29,7 @@ public class CustomerMapper {
         dto.setLicenseNumber(String.valueOf(customer.getLicenseNumber()));
         dto.setAddress(customer.getAddress());
         dto.setRegistrationDate(customer.getRegistrationDate());
-        dto.setDiscountId(customer.getDiscount().getId());
+        dto.setKeycloakId(customer.getKeycloak_id());
         return dto;
     }
 
@@ -49,8 +49,7 @@ public class CustomerMapper {
         entity.setLicenseNumber(dto.getLicenseNumber());
         entity.setAddress(dto.getAddress());
         entity.setRegistrationDate(dto.getRegistrationDate());
-        Discount discount = discountRepository.findById(dto.getDiscountId()).orElseThrow(() -> new ResourceNotFoundException("Discount with id " + dto.getDiscountId() + " not found"));
-        entity.setDiscount(discount);
+        entity.setKeycloak_id(dto.getKeycloakId());
         return entity;
     }
 }
