@@ -1,23 +1,31 @@
 package org.example.carrent.service;
 
+import org.example.carrent.dto.PaymentDTO;
 import org.example.carrent.dto.RentalDTO;
 import org.example.carrent.entity.Rental;
 import org.example.carrent.enums.RentalStatus;
 import org.example.carrent.exception.ResourceNotFoundException;
 import org.example.carrent.mapper.RentalMapper;
+import org.example.carrent.payuConfiguration.PaymentCreationResponse;
 import org.example.carrent.repository.RentalRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 @Service
 public class RentalServiceImpl implements RentalService {
+
     private final RentalRepository rentalRepository;
     private final RentalMapper rentalMapper;
+    private final PaymentService paymentService;
 
-    public RentalServiceImpl(RentalRepository rentalRepository, RentalMapper rentalMapper) {
+    public RentalServiceImpl(RentalRepository rentalRepository,
+                             RentalMapper rentalMapper,
+                             PaymentService paymentService) {
         this.rentalRepository = rentalRepository;
         this.rentalMapper = rentalMapper;
+        this.paymentService = paymentService;
     }
 
 
@@ -25,7 +33,17 @@ public class RentalServiceImpl implements RentalService {
     public RentalDTO addRental(RentalDTO rentalDTO) {
         Rental rental = rentalMapper.toEntity(rentalDTO);
         rental.setStatus(RentalStatus.CONFIRMED);
-        return rentalMapper.toDto(rentalRepository.save(rental));
+        rental = rentalRepository.save(rental);
+
+        long days = ChronoUnit.DAYS.between(rental.getStartDate(), rental.getFinishDate());
+        double cost = days * rental.getCar().getPricePerDay();
+
+
+
+        RentalDTO savedRental = rentalMapper.toDto(rental);
+        savedRental.setTotalCost(cost);
+
+        return savedRental;
     }
 
     @Override

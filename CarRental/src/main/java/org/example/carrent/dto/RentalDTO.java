@@ -23,4 +23,5 @@ public class RentalDTO {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate finishDate;
     private RentalStatus status;
+    private Double totalCost;
 }

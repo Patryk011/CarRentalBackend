@@ -45,5 +45,5 @@ public class Customer {
 
 
     @Column(name = "keycloak_id")
-    private UUID keycloak_id;
+    private UUID keycloakId;
 }

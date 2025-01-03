@@ -29,7 +29,7 @@ public class CustomerMapper {
         dto.setLicenseNumber(String.valueOf(customer.getLicenseNumber()));
         dto.setAddress(customer.getAddress());
         dto.setRegistrationDate(customer.getRegistrationDate());
-        dto.setKeycloakId(customer.getKeycloak_id());
+        dto.setKeycloakId(customer.getKeycloakId());
         return dto;
     }
 
@@ -49,7 +49,7 @@ public class CustomerMapper {
         entity.setLicenseNumber(dto.getLicenseNumber());
         entity.setAddress(dto.getAddress());
         entity.setRegistrationDate(dto.getRegistrationDate());
-        entity.setKeycloak_id(dto.getKeycloakId());
+        entity.setKeycloakId(dto.getKeycloakId());
         return entity;
     }
 }
