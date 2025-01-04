@@ -30,6 +30,20 @@ spring:
             issuer-uri: https://keycloak-local.pl:8443/realms/car-rental
             jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${EMAIL_USERNAME}
+    password: ${EMAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls.enable: true
+          starttls.required: true
+          ssl:
+            trust: smtp.gmail.com
+
 server:
   port: 8081
 
@@ -43,3 +57,4 @@ payu:
 logging:
   level:
     org.springframework.security: DEBUG
+
