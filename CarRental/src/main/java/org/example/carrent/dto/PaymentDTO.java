@@ -1,6 +1,8 @@
 package org.example.carrent.dto;
 
 import lombok.*;
+
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -11,8 +13,9 @@ public class PaymentDTO {
 
     private Long id;
     private String payuOrderId;
-    private String customerEmail;
-    private Double amount;
+    private Long customerId;
+    private Long rentalId;
+    private BigDecimal amount;
     private String description;
     private String paymentStatus;
     private LocalDateTime createdAt;

@@ -1,6 +1,8 @@
 package org.example.carrent.service;
 
 
+import org.example.carrent.Utils.MoneyUtil;
+import org.example.carrent.entity.Rental;
 import org.example.carrent.payuConfiguration.PayUConfig;
 import org.example.carrent.payuConfiguration.PaymentCreationResponse;
 import org.example.carrent.dto.PaymentDTO;
@@ -9,12 +11,14 @@ import org.example.carrent.entity.Payment;
 import org.example.carrent.mapper.PaymentMapper;
 import org.example.carrent.repository.CustomerRepository;
 import org.example.carrent.repository.PaymentRepository;
+import org.example.carrent.repository.RentalRepository;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -25,24 +29,32 @@ public class PaymentServiceImpl implements PaymentService {
     private final PayUConfig payUConfig;
     private final PaymentRepository paymentRepository;
     private final CustomerRepository customerRepository;
+    private final RentalRepository rentalRepository;
     private final PaymentMapper paymentMapper;
     private final WebClient webClient = WebClient.builder().build();
 
     public PaymentServiceImpl(PayUConfig payUConfig,
                               PaymentRepository paymentRepository,
                               CustomerRepository customerRepository,
-                              PaymentMapper paymentMapper) {
+                              PaymentMapper paymentMapper, RentalRepository rentalRepository) {
         this.payUConfig = payUConfig;
         this.paymentRepository = paymentRepository;
+        this.rentalRepository = rentalRepository;
         this.customerRepository = customerRepository;
         this.paymentMapper = paymentMapper;
     }
 
     @Override
     public PaymentCreationResponse createPayment(PaymentDTO request) {
+
+        Customer customer = customerRepository.findById(request.getCustomerId())
+                .orElseThrow(() -> new IllegalArgumentException("Customer not found"));
+
+        Rental rental = rentalRepository.findById(request.getRentalId()).orElseThrow(() -> new IllegalArgumentException("Rental not found"));
+
         String token = obtainOAuthToken();
 
-        Map<String, Object> payUOrderRequest = buildPayUOrderRequest(request);
+        Map<String, Object> payUOrderRequest = buildPayUOrderRequest(request, customer);
 
         Map<String, Object> payUResponse = webClient.post()
                 .uri(payUConfig.getPaymentUrl())
@@ -57,10 +69,9 @@ public class PaymentServiceImpl implements PaymentService {
         String redirectUri = (String) payUResponse.get("redirectUri");
 
 
-        Customer customer = customerRepository.findByEmail(request.getCustomerEmail())
-                .orElseThrow(() -> new IllegalArgumentException("Customer not found"));
 
-        Payment payment = paymentMapper.toEntity(request, customer);
+
+        Payment payment = paymentMapper.toEntity(request, customer, rental);
         payment.setCreatedAt(LocalDateTime.now());
         payment.setPaymentStatus("PENDING");
         payment.setPayuOrderId(payuOrderId);
@@ -88,30 +99,36 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
 
-    private Map<String, Object> buildPayUOrderRequest(PaymentDTO request) {
-        Map<String, Object> payUOrder = new HashMap<>();
+    private Map<String, Object> buildPayUOrderRequest(PaymentDTO request, Customer customer)
 
+    {
+
+        BigDecimal amount = MoneyUtil.toStoredFormat(request.getAmount());
+
+
+        Map<String, Object> payUOrder = new HashMap<>();
         payUOrder.put("notifyUrl", "http://localhost:8081/api/payu/notify");
         payUOrder.put("customerIp", "127.0.0.1");
         payUOrder.put("merchantPosId", payUConfig.getClientId());
         payUOrder.put("description", request.getDescription());
         payUOrder.put("currencyCode", "PLN");
-        payUOrder.put("totalAmount", (long) (request.getAmount() * 100));
+        payUOrder.put("totalAmount", amount.longValue());
         payUOrder.put("extOrderId", UUID.randomUUID().toString());
 
         Map<String, String> buyer = new HashMap<>();
-        buyer.put("email", request.getCustomerEmail());
+        buyer.put("email", customer.getEmail());
         buyer.put("language", "pl");
         payUOrder.put("buyer", buyer);
 
         List<Map<String, Object>> products = new ArrayList<>();
         Map<String, Object> product = new HashMap<>();
         product.put("name", "Car rental");
-        product.put("unitPrice", (long) (request.getAmount() * 100));
+        product.put("unitPrice", amount.longValue());
         product.put("quantity", "1");
         products.add(product);
         payUOrder.put("products", products);
 
         return payUOrder;
     }
-}
+
+    }

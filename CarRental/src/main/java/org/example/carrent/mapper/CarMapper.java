@@ -1,5 +1,6 @@
 package org.example.carrent.mapper;
 
+import org.example.carrent.Utils.MoneyUtil;
 import org.example.carrent.dto.CarDTO;
 import org.example.carrent.entity.Car;
 import org.example.carrent.entity.CarModel;
@@ -30,7 +31,7 @@ public class CarMapper {
         dto.setVin(car.getVin());
         dto.setProductionYear(car.getProductionYear());
         dto.setColor(car.getColor());
-        dto.setPricePerDay(BigDecimal.valueOf(car.getPricePerDay()).divide(BigDecimal.valueOf(100)));
+        dto.setPricePerDay(MoneyUtil.toDisplayFormat(BigDecimal.valueOf(car.getPricePerDay())));
         dto.setTransmission(car.getTransmission());
         dto.setFuelType(car.getFuelType());
         dto.setSeats(car.getSeats());
@@ -48,7 +49,7 @@ public class CarMapper {
         entity.setVin(dto.getVin());
         entity.setProductionYear(dto.getProductionYear());
         entity.setColor(dto.getColor());
-        entity.setPricePerDay(dto.getPricePerDay().multiply(BigDecimal.valueOf(100)).longValue());
+        entity.setPricePerDay(MoneyUtil.toStoredFormat(dto.getPricePerDay()).longValue());
         entity.setTransmission(dto.getTransmission());
         entity.setFuelType(dto.getFuelType());
         entity.setSeats(dto.getSeats());

@@ -13,6 +13,9 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,17 +37,23 @@ public class RegistrationEventListenerProvider implements EventListenerProvider 
             RealmModel realm = session.getContext().getRealm();
             UserModel user = session.users().getUserById(realm, event.getUserId());
 
-
+            String keycloakId = user.getId();
             String firstName = user.getFirstName();
             String lastName = user.getLastName();
             String email = user.getEmail();
             String phoneNumber = user.getFirstAttribute("phoneNumber");
+            String birthDate = user.getFirstAttribute("birthDate");
+
 
             HashMap<String, Object> customerData = new HashMap<>();
             customerData.put("firstName", firstName);
             customerData.put("lastName", lastName);
             customerData.put("email", email);
             customerData.put("phoneNumber", phoneNumber);
+            customerData.put("keycloakId", keycloakId);
+            customerData.put("birthDate", birthDate);
+            customerData.put("registrationDate", Instant.now().toEpochMilli());
+
 
             System.out.println("Customer data: " + customerData);
 

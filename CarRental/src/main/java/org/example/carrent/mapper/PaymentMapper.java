@@ -3,6 +3,7 @@ package org.example.carrent.mapper;
 import org.example.carrent.dto.PaymentDTO;
 import org.example.carrent.entity.Customer;
 import org.example.carrent.entity.Payment;
+import org.example.carrent.entity.Rental;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -21,7 +22,8 @@ public class PaymentMapper {
         return PaymentDTO.builder()
                 .id(payment.getId())
                 .payuOrderId(payment.getPayuOrderId())
-                .customerEmail(payment.getCustomer() != null ? payment.getCustomer().getEmail() : null)
+                .customerId(payment.getCustomer() != null ? payment.getCustomer().getId() : null)
+                .rentalId(payment.getRental() != null ? payment.getRental().getId() : null)
                 .amount(payment.getAmount())
                 .description(payment.getDescription())
                 .paymentStatus(payment.getPaymentStatus())
@@ -36,11 +38,12 @@ public class PaymentMapper {
                 .collect(Collectors.toList());
     }
 
-    public Payment toEntity(PaymentDTO dto, Customer customer) {
+    public Payment toEntity(PaymentDTO dto, Customer customer, Rental rental) {
         Payment payment = new Payment();
         payment.setId(dto.getId());
         payment.setPayuOrderId(dto.getPayuOrderId());
         payment.setCustomer(customer);
+        payment.setRental(rental);
         payment.setAmount(dto.getAmount());
         payment.setDescription(dto.getDescription());
         payment.setPaymentStatus(dto.getPaymentStatus());
