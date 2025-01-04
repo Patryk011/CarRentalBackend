@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -27,12 +28,17 @@ public class Payment {
 
 
     @ManyToOne
-    @JoinColumn(name="email", referencedColumnName = "email")
+    @JoinColumn(name="customer_id")
     private Customer customer;
 
 
+    @ManyToOne
+    @JoinColumn(name = "rental_id")
+    private Rental rental;
+
+
     @Column(name = "amount", nullable = false)
-    private Double amount;
+    private BigDecimal amount;
 
     @Column(name = "description")
     private String description;

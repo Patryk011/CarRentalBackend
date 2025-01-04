@@ -32,6 +32,7 @@ public class RentalMapper {
         dto.setCarId(rental.getCar().getId());
         dto.setStartDate(rental.getStartDate());
         dto.setFinishDate(rental.getFinishDate());
+        dto.setTotalCost(rental.getTotalCost());
         dto.setStatus(rental.getStatus());
         return dto;
     }
@@ -45,6 +46,7 @@ public class RentalMapper {
         entity.setCar(car);
         entity.setStatus(dto.getStatus());
         entity.setStartDate(dto.getStartDate());
+        entity.setTotalCost(dto.getTotalCost());
         entity.setFinishDate(dto.getFinishDate());
         return entity;
     }

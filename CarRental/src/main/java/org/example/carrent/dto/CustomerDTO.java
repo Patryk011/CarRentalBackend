@@ -2,6 +2,7 @@ package org.example.carrent.dto;
 
 import lombok.*;
 import java.util.Date;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -18,5 +19,6 @@ public class CustomerDTO {
     private String licenseNumber;
     private String address;
     private Long registrationDate;
-    private Long discountId;
+    private UUID keycloakId;
+
 }
