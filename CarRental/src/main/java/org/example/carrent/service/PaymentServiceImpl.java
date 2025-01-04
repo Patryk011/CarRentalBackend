@@ -1,6 +1,7 @@
 package org.example.carrent.service;
 
 
+import org.example.carrent.Utils.MoneyUtil;
 import org.example.carrent.entity.Rental;
 import org.example.carrent.payuConfiguration.PayUConfig;
 import org.example.carrent.payuConfiguration.PaymentCreationResponse;
@@ -17,6 +18,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -97,15 +99,20 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
 
-    private Map<String, Object> buildPayUOrderRequest(PaymentDTO request, Customer customer) {
-        Map<String, Object> payUOrder = new HashMap<>();
+    private Map<String, Object> buildPayUOrderRequest(PaymentDTO request, Customer customer)
 
+    {
+
+        BigDecimal amount = MoneyUtil.toStoredFormat(request.getAmount());
+
+
+        Map<String, Object> payUOrder = new HashMap<>();
         payUOrder.put("notifyUrl", "http://localhost:8081/api/payu/notify");
         payUOrder.put("customerIp", "127.0.0.1");
         payUOrder.put("merchantPosId", payUConfig.getClientId());
         payUOrder.put("description", request.getDescription());
         payUOrder.put("currencyCode", "PLN");
-        payUOrder.put("totalAmount", (long) (request.getAmount() * 100));
+        payUOrder.put("totalAmount", amount.longValue());
         payUOrder.put("extOrderId", UUID.randomUUID().toString());
 
         Map<String, String> buyer = new HashMap<>();
@@ -116,11 +123,12 @@ public class PaymentServiceImpl implements PaymentService {
         List<Map<String, Object>> products = new ArrayList<>();
         Map<String, Object> product = new HashMap<>();
         product.put("name", "Car rental");
-        product.put("unitPrice", (long) (request.getAmount() * 100));
+        product.put("unitPrice", amount.longValue());
         product.put("quantity", "1");
         products.add(product);
         payUOrder.put("products", products);
 
         return payUOrder;
     }
-}
+
+    }

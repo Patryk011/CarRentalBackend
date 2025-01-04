@@ -1,5 +1,6 @@
 package org.example.carrent.service;
 
+import org.example.carrent.Utils.MoneyUtil;
 import org.example.carrent.dto.PaymentDTO;
 import org.example.carrent.dto.RentalDTO;
 import org.example.carrent.entity.Rental;
@@ -10,6 +11,7 @@ import org.example.carrent.payuConfiguration.PaymentCreationResponse;
 import org.example.carrent.repository.RentalRepository;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
@@ -32,18 +34,19 @@ public class RentalServiceImpl implements RentalService {
     @Override
     public RentalDTO addRental(RentalDTO rentalDTO) {
         Rental rental = rentalMapper.toEntity(rentalDTO);
-        rental.setStatus(RentalStatus.CONFIRMED);
-        rental = rentalRepository.save(rental);
+
 
         long days = ChronoUnit.DAYS.between(rental.getStartDate(), rental.getFinishDate());
-        double cost = days * rental.getCar().getPricePerDay();
+        BigDecimal pricePerDay = MoneyUtil.toDisplayFormat(BigDecimal.valueOf(rental.getCar().getPricePerDay()));
+        BigDecimal totalCost = MoneyUtil.calculateTotalCost(pricePerDay, days);
+
+        rental.setStatus(RentalStatus.CONFIRMED);
+        rental.setTotalCost(totalCost);
 
 
+        rental = rentalRepository.save(rental);
 
-        RentalDTO savedRental = rentalMapper.toDto(rental);
-        savedRental.setTotalCost(cost);
-
-        return savedRental;
+        return rentalMapper.toDto(rental);
     }
 
     @Override

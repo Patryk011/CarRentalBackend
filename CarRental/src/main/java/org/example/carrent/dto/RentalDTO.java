@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.carrent.enums.RentalStatus;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
@@ -23,5 +24,5 @@ public class RentalDTO {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate finishDate;
     private RentalStatus status;
-    private Double totalCost;
+    private BigDecimal totalCost;
 }

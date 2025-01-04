@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.example.carrent.enums.RentalStatus;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -39,4 +40,7 @@ public class Rental {
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
     private RentalStatus status;
+
+    @Column(name = "total_cost")
+    private BigDecimal totalCost;
 }
