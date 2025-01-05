@@ -25,4 +25,5 @@ public class RentalDTO {
     private LocalDate finishDate;
     private RentalStatus status;
     private BigDecimal totalCost;
+    private Integer discountPercentage;
 }

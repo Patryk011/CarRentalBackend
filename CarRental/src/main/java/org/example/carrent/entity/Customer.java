@@ -42,6 +42,9 @@ public class Customer {
     @Column(name = "registration_date")
     private Long registrationDate;
 
+    @Column(name = "discount_percentage")
+    private Integer discountPercentage;
+
 
 
     @Column(name = "keycloak_id")
