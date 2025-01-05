@@ -40,6 +40,14 @@ public class RentalServiceImpl implements RentalService {
         BigDecimal pricePerDay = MoneyUtil.toDisplayFormat(BigDecimal.valueOf(rental.getCar().getPricePerDay()));
         BigDecimal totalCost = MoneyUtil.calculateTotalCost(pricePerDay, days);
 
+        Integer discountPercentage = rental.getCustomer().getDiscountPercentage();
+
+        if (discountPercentage != null) {
+            BigDecimal discount = totalCost.multiply(BigDecimal.valueOf(discountPercentage))
+                    .divide(BigDecimal.valueOf(100));
+            totalCost = totalCost.subtract(discount);
+        }
+
         rental.setStatus(RentalStatus.CONFIRMED);
         rental.setTotalCost(totalCost);
 

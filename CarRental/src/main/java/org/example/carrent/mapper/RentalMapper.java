@@ -3,12 +3,10 @@ package org.example.carrent.mapper;
 import org.example.carrent.dto.RentalDTO;
 import org.example.carrent.entity.Car;
 import org.example.carrent.entity.Customer;
-import org.example.carrent.entity.Discount;
 import org.example.carrent.entity.Rental;
 import org.example.carrent.exception.ResourceNotFoundException;
 import org.example.carrent.repository.CarRepository;
 import org.example.carrent.repository.CustomerRepository;
-import org.example.carrent.repository.DiscountRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -29,6 +27,7 @@ public class RentalMapper {
         RentalDTO dto = new RentalDTO();
         dto.setId(rental.getId());
         dto.setCustomerId(rental.getCustomer().getId());
+        dto.setDiscountPercentage(rental.getCustomer().getDiscountPercentage());
         dto.setCarId(rental.getCar().getId());
         dto.setStartDate(rental.getStartDate());
         dto.setFinishDate(rental.getFinishDate());

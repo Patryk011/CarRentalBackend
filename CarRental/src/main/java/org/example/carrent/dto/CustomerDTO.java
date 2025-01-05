@@ -19,6 +19,7 @@ public class CustomerDTO {
     private String licenseNumber;
     private String address;
     private Long registrationDate;
+    private Integer discountPercentage;
     private UUID keycloakId;
 
 }

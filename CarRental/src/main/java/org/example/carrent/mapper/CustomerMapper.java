@@ -2,9 +2,7 @@ package org.example.carrent.mapper;
 
 import org.example.carrent.entity.Customer;
 import org.example.carrent.dto.CustomerDTO;
-import org.example.carrent.entity.Discount;
 import org.example.carrent.exception.ResourceNotFoundException;
-import org.example.carrent.repository.DiscountRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -12,11 +10,7 @@ import java.util.stream.Collectors;
 
 @Component
 public class CustomerMapper {
-    private final DiscountRepository discountRepository;
 
-    public CustomerMapper(DiscountRepository discountRepository) {
-        this.discountRepository = discountRepository;
-    }
 
     public static CustomerDTO toDto(Customer customer) {
         CustomerDTO dto = new CustomerDTO();
@@ -28,6 +22,7 @@ public class CustomerMapper {
         dto.setBirthDate(customer.getBirthDate());
         dto.setLicenseNumber(String.valueOf(customer.getLicenseNumber()));
         dto.setAddress(customer.getAddress());
+        dto.setDiscountPercentage(customer.getDiscountPercentage());
         dto.setRegistrationDate(customer.getRegistrationDate());
         dto.setKeycloakId(customer.getKeycloakId());
         return dto;
@@ -49,6 +44,7 @@ public class CustomerMapper {
         entity.setLicenseNumber(dto.getLicenseNumber());
         entity.setAddress(dto.getAddress());
         entity.setRegistrationDate(dto.getRegistrationDate());
+        entity.setDiscountPercentage(dto.getDiscountPercentage());
         entity.setKeycloakId(dto.getKeycloakId());
         return entity;
     }
