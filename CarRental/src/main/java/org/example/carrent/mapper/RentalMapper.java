@@ -33,6 +33,9 @@ public class RentalMapper {
         dto.setFinishDate(rental.getFinishDate());
         dto.setTotalCost(rental.getTotalCost());
         dto.setStatus(rental.getStatus());
+        dto.setCarBrand(rental.getCar().getCarModel().getCarBrand().getBrand());
+        dto.setCarModel(rental.getCar().getCarModel().getModel());
+        dto.setRegistrationNumber(rental.getCar().getRegistrationNumber());
         return dto;
     }
 

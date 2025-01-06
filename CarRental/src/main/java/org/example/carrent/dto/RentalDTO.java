@@ -26,4 +26,7 @@ public class RentalDTO {
     private RentalStatus status;
     private BigDecimal totalCost;
     private Integer discountPercentage;
+    private String carBrand;
+    private String carModel;
+    private String registrationNumber;
 }
