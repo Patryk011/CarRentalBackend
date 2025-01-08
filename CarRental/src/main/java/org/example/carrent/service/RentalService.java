@@ -9,4 +9,5 @@ public interface RentalService {
     RentalDTO findRentalById(Long id);
     List<RentalDTO> getAllRentals();
     RentalDTO cancelRental(Long id);
+    List<RentalDTO> getRentalsByCustomerId(Long customerId);
 }

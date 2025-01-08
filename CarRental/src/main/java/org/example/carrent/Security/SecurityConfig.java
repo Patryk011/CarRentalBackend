@@ -28,7 +28,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .cors(withDefaults())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/public", "/customer-sync/register", "/api/Cars/all").permitAll().anyRequest().authenticated()
+                        .requestMatchers("/api/public", "/customer-sync/register", "/api/Cars/all", "/api/Cars/available").permitAll().anyRequest().authenticated()
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2
                         .jwt(withDefaults()))

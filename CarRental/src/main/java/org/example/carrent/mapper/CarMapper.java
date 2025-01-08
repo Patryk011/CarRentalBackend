@@ -28,7 +28,6 @@ public class CarMapper {
         dto.setCarBrandName(car.getCarModel().getCarBrand().getBrand());
         dto.setRegistrationNumber(car.getRegistrationNumber());
         dto.setState(car.getState());
-        dto.setVin(car.getVin());
         dto.setProductionYear(car.getProductionYear());
         dto.setColor(car.getColor());
         dto.setPricePerDay(MoneyUtil.toDisplayFormat(BigDecimal.valueOf(car.getPricePerDay())));
@@ -46,7 +45,6 @@ public class CarMapper {
         entity.setId(dto.getId());
         entity.setRegistrationNumber(dto.getRegistrationNumber());
         entity.setState(dto.getState());
-        entity.setVin(dto.getVin());
         entity.setProductionYear(dto.getProductionYear());
         entity.setColor(dto.getColor());
         entity.setPricePerDay(MoneyUtil.toStoredFormat(dto.getPricePerDay()).longValue());

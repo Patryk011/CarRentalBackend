@@ -48,7 +48,6 @@ public class RentalServiceImpl implements RentalService {
             totalCost = totalCost.subtract(discount);
         }
 
-        rental.setStatus(RentalStatus.CONFIRMED);
         rental.setTotalCost(totalCost);
 
 
@@ -66,6 +65,12 @@ public class RentalServiceImpl implements RentalService {
     @Override
     public List<RentalDTO> getAllRentals() {
         return rentalMapper.toDto(rentalRepository.findAll());
+    }
+
+    @Override
+    public List<RentalDTO> getRentalsByCustomerId(Long customerId) {
+        List<Rental> rentals = rentalRepository.findByCustomerId(customerId);
+        return rentalMapper.toDto(rentals);
     }
 
     @Override

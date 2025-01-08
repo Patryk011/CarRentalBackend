@@ -34,8 +34,7 @@ public class Car {
     @Column(name = "state", nullable = false)
     private CarState state;
 
-    @Column(name = "vin", nullable = false)
-    private String vin;
+
 
     @Column(name = "production_year", nullable = false)
     private Integer productionYear;
