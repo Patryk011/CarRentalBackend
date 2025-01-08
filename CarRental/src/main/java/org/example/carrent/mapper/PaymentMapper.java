@@ -4,6 +4,8 @@ import org.example.carrent.dto.PaymentDTO;
 import org.example.carrent.entity.Customer;
 import org.example.carrent.entity.Payment;
 import org.example.carrent.entity.Rental;
+import org.example.carrent.exception.ResourceNotFoundException;
+import org.example.carrent.repository.CustomerRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -13,9 +15,11 @@ import java.util.stream.Collectors;
 public class PaymentMapper {
 
     private final CustomerMapper customerMapper;
+    private final CustomerRepository customerRepository;
 
-    public PaymentMapper(CustomerMapper customerMapper) {
+    public PaymentMapper(CustomerMapper customerMapper, CustomerRepository customerRepository) {
         this.customerMapper = customerMapper;
+        this.customerRepository = customerRepository;
     }
 
     public PaymentDTO toDto(Payment payment) {
@@ -38,8 +42,9 @@ public class PaymentMapper {
                 .collect(Collectors.toList());
     }
 
-    public Payment toEntity(PaymentDTO dto, Customer customer, Rental rental) {
+    public Payment toEntity(PaymentDTO dto, Rental rental) {
         Payment payment = new Payment();
+        Customer customer = customerRepository.findById(dto.getCustomerId()).orElseThrow(() -> new ResourceNotFoundException("Customer with id " + dto.getCustomerId() + " not found"));
         payment.setId(dto.getId());
         payment.setPayuOrderId(dto.getPayuOrderId());
         payment.setCustomer(customer);

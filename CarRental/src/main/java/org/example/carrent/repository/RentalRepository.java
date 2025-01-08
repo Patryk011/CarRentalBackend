@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface RentalRepository extends JpaRepository<Rental, Long> {
-
+    List<Rental> findByCustomerId(Long customerId);
 }

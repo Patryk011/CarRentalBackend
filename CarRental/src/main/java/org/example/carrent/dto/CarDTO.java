@@ -24,7 +24,6 @@ public class CarDTO {
     private String carBrandName;
     private String registrationNumber;
     private CarState state;
-    private String vin;
     private Integer productionYear;
     private String color;
     private BigDecimal pricePerDay;

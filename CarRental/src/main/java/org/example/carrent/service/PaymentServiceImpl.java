@@ -47,14 +47,16 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public PaymentCreationResponse createPayment(PaymentDTO request) {
 
-        Customer customer = customerRepository.findById(request.getCustomerId())
-                .orElseThrow(() -> new IllegalArgumentException("Customer not found"));
+//        Customer customer = customerRepository.findById(request.getCustomerId())
+//                .orElseThrow(() -> new IllegalArgumentException("Customer not found"));
 
         Rental rental = rentalRepository.findById(request.getRentalId()).orElseThrow(() -> new IllegalArgumentException("Rental not found"));
 
+
+
         String token = obtainOAuthToken();
 
-        Map<String, Object> payUOrderRequest = buildPayUOrderRequest(request, customer);
+        Map<String, Object> payUOrderRequest = buildPayUOrderRequest(request, rental.getCustomer());
 
         Map<String, Object> payUResponse = webClient.post()
                 .uri(payUConfig.getPaymentUrl())
@@ -71,7 +73,7 @@ public class PaymentServiceImpl implements PaymentService {
 
 
 
-        Payment payment = paymentMapper.toEntity(request, customer, rental);
+        Payment payment = paymentMapper.toEntity(request,  rental);
         payment.setCreatedAt(LocalDateTime.now());
         payment.setPaymentStatus("PENDING");
         payment.setPayuOrderId(payuOrderId);
