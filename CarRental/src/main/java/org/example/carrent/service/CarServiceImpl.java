@@ -47,6 +47,12 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
+    public Integer checkOneCarAvailability(LocalDate startDate, LocalDate endDate, Long id) {
+        return carRepository.checkOneCarAvailability(startDate, endDate, id);
+    }
+
+
+    @Override
     public CarDTO blockCar(Long id) {
         Car car = carRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Car with id " + id + " not found"));
         car.setState(CarState.BLOCKED);
