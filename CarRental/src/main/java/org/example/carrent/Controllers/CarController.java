@@ -45,6 +45,14 @@ public class CarController {
         return carService.findAvailableCars(formattedStartDate,formattedEndDate);
     }
 
+    @GetMapping("/available/{id}")
+    public Integer checkOneCarAvailability(@RequestParam("startDate") String startDate, @RequestParam("endDate") String endDate,@PathVariable Long id) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate formattedStartDate = LocalDate.parse(startDate, formatter);
+        LocalDate formattedEndDate = LocalDate.parse(endDate, formatter);
+        return carService.checkOneCarAvailability(formattedStartDate,formattedEndDate,id);
+    }
+
     @PatchMapping("/{id}/block")
     public CarDTO blockCar(@PathVariable Long id) {
         return carService.blockCar(id);

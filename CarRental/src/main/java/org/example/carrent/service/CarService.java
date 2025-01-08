@@ -18,6 +18,8 @@ public interface CarService {
 
     List<CarDTO> findAvailableCars(LocalDate startDate, LocalDate endDate);
 
+    Integer checkOneCarAvailability(LocalDate startDate, LocalDate endDate, Long id);
+
     CarDTO blockCar(Long id);
 
     CarDTO unlockCar(Long id);

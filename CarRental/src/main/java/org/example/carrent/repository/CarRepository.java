@@ -26,4 +26,18 @@ public interface CarRepository extends JpaRepository<Car, Long> {
             """, nativeQuery = true)
     List<Car> findAvailableCarsInDateRange(@Param("startDate") LocalDate startDate,
                                            @Param("endDate") LocalDate endDate);
+
+    @Query(value = """
+            SELECT COUNT(*)
+            FROM carrental.car c
+            WHERE c.id = :id AND EXISTS (
+                SELECT 1
+                FROM carrental.rental r
+                WHERE r.car_id = c.id
+                   AND (r.start_date < :endDate AND r.finish_date > :startDate)
+            )
+            """, nativeQuery = true)
+    Integer checkOneCarAvailability(@Param("startDate") LocalDate startDate,
+                                           @Param("endDate") LocalDate endDate,
+                                    @Param("id") Long id);
 }
