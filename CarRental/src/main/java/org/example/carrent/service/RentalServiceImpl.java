@@ -49,7 +49,7 @@ public class RentalServiceImpl implements RentalService {
         }
 
         rental.setTotalCost(totalCost);
-
+        rental.setStatus(RentalStatus.CONFIRMED);
 
         rental = rentalRepository.save(rental);
 
