@@ -23,4 +23,6 @@ public interface CarService {
     CarDTO blockCar(Long id);
 
     CarDTO unlockCar(Long id);
+
+    void deleteCar(Long id);
 }

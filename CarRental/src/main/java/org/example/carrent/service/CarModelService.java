@@ -11,4 +11,8 @@ public interface CarModelService {
     CarModelDTO findCarModelById(Long id);
 
     List<CarModelDTO> getAllCarModels();
+
+    List<CarModelDTO> findAllWithBrandId(Long id);
+
+    List<CarModelDTO> findAllWithBrandName(String brandName);
 }

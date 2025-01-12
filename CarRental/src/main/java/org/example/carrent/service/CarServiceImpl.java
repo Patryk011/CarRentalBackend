@@ -1,7 +1,6 @@
 package org.example.carrent.service;
 
 import org.example.carrent.dto.CarDTO;
-import org.example.carrent.dto.CarModelDTO;
 import org.example.carrent.entity.Car;
 import org.example.carrent.enums.CarState;
 import org.example.carrent.exception.ResourceNotFoundException;
@@ -10,7 +9,6 @@ import org.example.carrent.repository.CarRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -66,5 +64,10 @@ public class CarServiceImpl implements CarService {
         car.setState(CarState.AVAILABLE);
         carRepository.save(car);
         return carMapper.toDto(car);
+    }
+
+    @Override
+    public void deleteCar(Long id) {
+        carRepository.deleteById(id);
     }
 }

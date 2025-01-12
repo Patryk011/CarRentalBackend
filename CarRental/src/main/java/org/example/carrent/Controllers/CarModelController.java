@@ -31,4 +31,14 @@ public class CarModelController {
     public CarModelDTO getCarModelById(@PathVariable Long id) {
         return  carModelService.findCarModelById(id);
     }
+
+    @GetMapping("/brandById/{id}")
+    public List<CarModelDTO> getAllWithBrandId(@PathVariable Long id) {
+        return  carModelService.findAllWithBrandId(id);
+    }
+
+    @GetMapping("/brandByName/{name}")
+    public List<CarModelDTO> getAllWithBrandName(@PathVariable String name) {
+        return  carModelService.findAllWithBrandName(name);
+    }
 }
