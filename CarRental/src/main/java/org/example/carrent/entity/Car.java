@@ -1,7 +1,6 @@
 package org.example.carrent.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,13 +8,10 @@ import org.example.carrent.enums.CarFuelType;
 import org.example.carrent.enums.CarState;
 import org.example.carrent.enums.CarTransmission;
 
-import java.time.LocalDate;
-
 @Entity
 @Table(name = "car")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 public class Car {
 
