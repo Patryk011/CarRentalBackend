@@ -32,6 +32,16 @@ public class CarModelServiceImpl implements CarModelService {
     }
 
     @Override
+    public List<CarModelDTO> getAllWithBrandId(Long id) {
+        return carModelMapper.toDto(carModelRepository.getAllWithBrandId(id));
+    }
+
+    @Override
+    public List<CarModelDTO> getAllWithBrandName(String brandName) {
+        return carModelMapper.toDto(carModelRepository.getAllWithBrandName(brandName));
+    }
+
+    @Override
     public List<CarModelDTO> getAllCarModels() {
         return carModelMapper.toDto(carModelRepository.findAll());
     }
