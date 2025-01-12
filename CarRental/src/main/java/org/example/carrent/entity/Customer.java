@@ -9,6 +9,7 @@ import java.util.UUID;
 @Table(name = "customers")
 @Getter
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
 public class Customer {
 

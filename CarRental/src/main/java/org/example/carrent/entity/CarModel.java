@@ -10,6 +10,7 @@ import lombok.Setter;
 @Table(name = "car_model")
 @Getter
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
 public class CarModel {
 
