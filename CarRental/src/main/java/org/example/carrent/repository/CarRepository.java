@@ -19,8 +19,10 @@ public interface CarRepository extends JpaRepository<Car, Long> {
             WHERE car.id NOT IN (
                 SELECT r.car_id
                 FROM carrental.rental r
-                WHERE (r.start_date < :startDate AND r.finish_date > :startDate)
-                   OR (r.start_date < :endDate AND r.finish_date > :endDate)
+                WHERE (r.start_date <= :startDate AND r.finish_date >= :endDate)
+                   OR (r.start_date <= :startDate AND r.finish_date >= :startDate)
+                   OR (r.start_date <= :endDate AND r.finish_date >= :endDate)
+                   OR (r.start_date >= :startDate AND r.finish_date <= :endDate)
             )
             AND car.state = 'AVAILABLE';
             """, nativeQuery = true)
@@ -34,7 +36,7 @@ public interface CarRepository extends JpaRepository<Car, Long> {
                 SELECT 1
                 FROM carrental.rental r
                 WHERE r.car_id = c.id
-                   AND (r.start_date < :endDate AND r.finish_date > :startDate)
+                   AND (r.start_date <= :endDate AND r.finish_date >= :startDate)
             )
             """, nativeQuery = true)
     Integer checkOneCarAvailability(@Param("startDate") LocalDate startDate,
