@@ -37,7 +37,7 @@ public interface CarRepository extends JpaRepository<Car, Long> {
                 FROM carrental.rental r
                 WHERE r.car_id = c.id
                    AND (r.start_date <= :endDate AND r.finish_date >= :startDate)
-            ) AND c.state = 'AVAILABLE';
+            ) OR (c.id = :id AND c.state = 'BLOCKED');
             """, nativeQuery = true)
     Integer checkOneCarAvailability(@Param("startDate") LocalDate startDate,
                                            @Param("endDate") LocalDate endDate,
